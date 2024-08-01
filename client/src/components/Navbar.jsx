@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Facebook from "../assets/icons/Facebook";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -61,7 +62,7 @@ function NavbarComponent() {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <img src={``} alt="" />
+                <Facebook />
               </a>
               <a href="#">
                 <img src={``} alt="" />
