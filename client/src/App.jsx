@@ -3,6 +3,7 @@ import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Skills from "./components/Skills";
+import Project from "./components/Project";
 
 function App() {
   return (
