@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import FacebookIcon from "../assets/icons/FacebookIcon";
 import TwitterIcon from "../assets/icons/TwitterIcon";
 import LinkedInIcon from "../assets/icons/LinkedInIcon";
+import logo from "../assets/icons/logo.jpg";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -28,7 +29,7 @@ function NavbarComponent() {
     <Navbar expand="lg" className={scrolled ? `scrolled` : ``}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={``} alt="Logo" />
+          <img src={logo} alt="Logo" className=" rounded-full" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
