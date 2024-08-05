@@ -34,7 +34,7 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder="Frist Name"
-                    value={initialEntries.firstname}
+                    value={forsDetails.firstname}
                     onChange={(e) =>
                       handleFormChange(`firstname`, e.target.value)
                     }
@@ -44,7 +44,7 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    value={initialEntries.lastname}
+                    value={forsDetails.lastname}
                     onChange={(e) =>
                       handleFormChange(`lastname`, e.target.value)
                     }
@@ -54,7 +54,7 @@ export default function Contact() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    value={initialEntries.email}
+                    value={forsDetails.email}
                     onChange={(e) => handleFormChange(`email`, e.target.value)}
                   />
                 </Col>
@@ -62,10 +62,23 @@ export default function Contact() {
                   <input
                     type="tel"
                     placeholder="Your Phone Number"
-                    value={initialEntries.phone}
+                    value={forsDetails.phone}
                     onChange={(e) => handleFormChange(`phone`, e.target.value)}
                   />
                 </Col>
+                <Col>
+                  <textarea
+                    rows={6}
+                    placeholder="Your Message"
+                    value={forsDetails.phone}
+                    onChange={(e) =>
+                      handleFormChange(`message`, e.target.value)
+                    }
+                  />
+                </Col>
+                <button type="submit">
+                  <spn>{buttonText}</spn>
+                </button>
               </Row>
             </form>
           </Col>
