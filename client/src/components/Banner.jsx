@@ -1,15 +1,56 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
+import bannerImage from "../assets/img/header-img.svg";
+import { useEffect, useState } from "react";
 
 export default function Banner() {
+  const [focusText, setFocusText] = useState(``);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [delter, setDelta] = useState(300 - Math.random() * 100);
+  const period = 2000;
+  const toDisplay = [
+    `Computer Scientist`,
+    `Web Engineer`,
+    `Mobile App Dev`,
+    `ICT Specialist`,
+  ];
+
+  useEffect(() => {
+    let getTicker = setInterval(() => {
+      ticker();
+    }, delter);
+    return () => clearInterval(getTicker);
+  }, [focusText]);
+
+  const ticker = () => {
+    let i = loopNum % toDisplay.length;
+    let fullText = toDisplay[i];
+    let updatedText = isDeleting
+      ? fullText.substring(0, focusText.length - 1)
+      : fullText.substring(0, focusText.length + 1);
+
+    setFocusText(updatedText);
+
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === ``) {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setDelta(500);
+    }
+  };
+
   return (
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} lg={7}>
+          <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to my Portfolio</span>
             <h1 className="head">
-              Ikendu Concept <span className="wrap">Web Engineer</span>
+              Ikendu Concept <br />
+              <span className="wrap">{focusText}</span>
             </h1>
             <p className="para">
               The web development industry is evolving in a very fast rate and
@@ -26,6 +67,9 @@ export default function Banner() {
             <button onClick={() => console.log(`connect`)} className="btn">
               Let's connect <ArrowRightCircle size={25} />
             </button>
+          </Col>
+          <Col xs={12} md={6} xl={5}>
+            <img src={bannerImage} alt="Banner Image" className="img" />
           </Col>
         </Row>
       </Container>

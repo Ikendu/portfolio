@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import FacebookIcon from "../assets/icons/FacebookIcon";
-import TwitterIcon from "../assets/icons/TwitterIcon";
-import LinkedInIcon from "../assets/icons/LinkedInIcon";
 import logo from "../assets/icons/logo.jpg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
@@ -32,7 +28,11 @@ function NavbarComponent() {
     <Navbar expand="lg" className={scrolled ? `scrolled` : ``}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" className=" rounded-full" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="rounded-full max-w-[50px] border-3"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
