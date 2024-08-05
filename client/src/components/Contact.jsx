@@ -19,6 +19,10 @@ export default function Contact() {
   const handleFormChange = (field, value) => {
     setFormDetails({ ...forsDetails, [field]: value });
   };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className="contact" id="contact">
       <Container>
@@ -28,7 +32,7 @@ export default function Contact() {
           </Col>
           <Col md={6}>
             <h2>Get in touch</h2>
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <Row>
                 <Col sm={6} className="px-1">
                   <input
@@ -75,10 +79,21 @@ export default function Contact() {
                       handleFormChange(`message`, e.target.value)
                     }
                   />
+                  <button type="submit">
+                    <spn>{buttonText}</spn>
+                  </button>
                 </Col>
-                <button type="submit">
-                  <spn>{buttonText}</spn>
-                </button>
+                {status.message && (
+                  <Col>
+                    <p
+                      className={
+                        status.success === false ? `danger` : `success`
+                      }
+                    >
+                      {status.message}
+                    </p>
+                  </Col>
+                )}
               </Row>
             </form>
           </Col>
