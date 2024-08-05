@@ -7,6 +7,9 @@ import FacebookIcon from "../assets/icons/FacebookIcon";
 import TwitterIcon from "../assets/icons/TwitterIcon";
 import LinkedInIcon from "../assets/icons/LinkedInIcon";
 import logo from "../assets/icons/logo.jpg";
+import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon2 from "../assets/img/nav-icon2.svg";
+import navIcon3 from "../assets/img/nav-icon3.svg";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -14,8 +17,8 @@ function NavbarComponent() {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) setScroll(true);
-      else setScroll(false);
+      if (window.scrollY > 50) setScrolled(true);
+      else setScrolled(false);
     };
     addEventListener(`scroll`, onScroll);
     return () => removeEventListener(`scroll`, onScroll);
@@ -33,7 +36,7 @@ function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto flex items-center ">
             <Nav.Link
               href="#home"
               onClick={() => changeActivelink(`home`)}
@@ -65,15 +68,18 @@ function NavbarComponent() {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <FacebookIcon />
+                <img src={navIcon1} alt="nav" />
               </a>
               <a href="#">
-                <TwitterIcon />
+                <img src={navIcon2} alt="nav" />
               </a>
               <a href="#">
-                <LinkedInIcon />
+                <img src={navIcon3} alt="nav" />
               </a>
             </div>
+            <button onClick={() => console.log(`connect`)} className="">
+              Let's connect
+            </button>
           </span>
         </Navbar.Collapse>
       </Container>
