@@ -1,30 +1,37 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import CardContents from "./CardContents";
+import imageRigh from "../assets/img/color-sharp2.png";
+import image1 from "../assets/img/project-img1.png";
+import image2 from "../assets/img/project-img2.png";
+import image3 from "../assets/img/project-img3.png";
+import image4 from "../assets/img/project-img3.png";
+import image5 from "../assets/img/project-img3.png";
 
 const projects = [
   {
     title: `title`,
-    description: `desc`,
-    image: `image`,
+    desc: `desc`,
+    image: image1,
   },
   {
     title: `title`,
-    description: `desc`,
-    image: `image`,
+    desc: `desc`,
+    image: image2,
   },
   {
     title: `title`,
-    description: `desc`,
-    image: `image`,
+    desc: `desc`,
+    image: image3,
   },
   {
     title: `title`,
-    description: `desc`,
-    image: `image`,
+    desc: `desc`,
+    image: image4,
   },
   {
     title: `title`,
-    description: `desc`,
-    image: `image`,
+    desc: `desc`,
+    image: image5,
   },
 ];
 export default function Project() {
@@ -40,7 +47,11 @@ export default function Project() {
               debugging processes. Bringing forth
             </p>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-              <Nav variant="pills" className="flex-row">
+              <Nav
+                variant="pills"
+                className="flex-row  nav-pills justify-center mb-5 items-center "
+                id="pills-tab"
+              >
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab 1</Nav.Link>
                 </Nav.Item>
@@ -53,15 +64,20 @@ export default function Project() {
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <Row>First</Row>
+                  <Row>
+                    {projects.map((project, idx) => (
+                      <CardContents key={idx} {...project} />
+                    ))}
+                  </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
-                <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
+                <Tab.Pane eventKey="third">Second tab content</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
         </Row>
       </Container>
+      <img src={imageRigh} alt="" className="background-image-right" />
     </section>
   );
 }
