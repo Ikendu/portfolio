@@ -3,7 +3,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Facebook from "../assets/icons/Facebook";
+import FacebookIcon from "../assets/icons/FacebookIcon";
+import TwitterIcon from "../assets/icons/TwitterIcon";
+import LinkedInIcon from "../assets/icons/LinkedInIcon";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -62,13 +64,13 @@ function NavbarComponent() {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
-                <Facebook />
+                <FacebookIcon />
               </a>
               <a href="#">
-                <img src={``} alt="" />
+                <TwitterIcon />
               </a>
               <a href="#">
-                <img src={``} alt="" />
+                <LinkedInIcon />
               </a>
             </div>
           </span>
