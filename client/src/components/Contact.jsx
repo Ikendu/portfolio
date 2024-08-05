@@ -33,11 +33,37 @@ export default function Contact() {
                 <Col sm={6} className="px-1">
                   <input
                     type="text"
-                    placeholder="Fris Name"
+                    placeholder="Frist Name"
                     value={initialEntries.firstname}
                     onChange={(e) =>
                       handleFormChange(`firstname`, e.target.value)
                     }
+                  />
+                </Col>
+                <Col sm={6} className="px-1">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    value={initialEntries.lastname}
+                    onChange={(e) =>
+                      handleFormChange(`lastname`, e.target.value)
+                    }
+                  />
+                </Col>
+                <Col sm={6} className="px-1">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    value={initialEntries.email}
+                    onChange={(e) => handleFormChange(`email`, e.target.value)}
+                  />
+                </Col>
+                <Col sm={6} className="px-1">
+                  <input
+                    type="tel"
+                    placeholder="Your Phone Number"
+                    value={initialEntries.phone}
+                    onChange={(e) => handleFormChange(`phone`, e.target.value)}
                   />
                 </Col>
               </Row>
