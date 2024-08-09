@@ -49,7 +49,7 @@ export default function Banner() {
           <Col xs={12} md={6} xl={7}>
             <span className="tagline">Welcome to my Portfolio</span>
             <h1 className="head">
-              Ikendu Concept <br />
+              David Concept <br />
               <span className="wrap">{focusText}</span>
             </h1>
             <p className="para">

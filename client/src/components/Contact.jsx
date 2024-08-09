@@ -12,16 +12,32 @@ export default function Contact() {
     message: ``,
   };
 
-  const [forsDetails, setFormDetails] = useState(initialEntries);
+  const [formDetails, setFormDetails] = useState(initialEntries);
   const [buttonText, setButtonText] = useState(`Send`);
   const [status, setStatus] = useState({});
 
   const handleFormChange = (field, value) => {
-    setFormDetails({ ...forsDetails, [field]: value });
+    setFormDetails({ ...formDetails, [field]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setButtonText(`Sending`);
+    let response = await fetch(`http://localhost:5000/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(formDetails),
+    });
+    setButtonText(`Send`);
+    let result = response.json();
+    setFormDetails(initialEntries);
+    if (result.code === 200) {
+      setStatus({ success: true, message: `Message sent successfully` });
+    } else {
+      setStatus({ success: false, message: `there was an error, try again ` });
+    }
   };
   return (
     <section className="contact" id="contact">
@@ -38,7 +54,7 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder="Frist Name"
-                    value={forsDetails.firstname}
+                    value={formDetails.firstname}
                     onChange={(e) =>
                       handleFormChange(`firstname`, e.target.value)
                     }
@@ -48,7 +64,7 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder="Last Name"
-                    value={forsDetails.lastname}
+                    value={formDetails.lastname}
                     onChange={(e) =>
                       handleFormChange(`lastname`, e.target.value)
                     }
@@ -58,7 +74,7 @@ export default function Contact() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    value={forsDetails.email}
+                    value={formDetails.email}
                     onChange={(e) => handleFormChange(`email`, e.target.value)}
                   />
                 </Col>
@@ -66,7 +82,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     placeholder="Your Phone Number"
-                    value={forsDetails.phone}
+                    value={formDetails.phone}
                     onChange={(e) => handleFormChange(`phone`, e.target.value)}
                   />
                 </Col>
@@ -74,7 +90,7 @@ export default function Contact() {
                   <textarea
                     rows={6}
                     placeholder="Your Message"
-                    value={forsDetails.phone}
+                    value={formDetails.phone}
                     onChange={(e) =>
                       handleFormChange(`message`, e.target.value)
                     }
