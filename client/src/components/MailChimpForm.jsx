@@ -8,7 +8,15 @@ export default function MailChimpForm() {
     <>
       <MailchimpSubscribe
         url={postUrl}
-        render={({ subscribe, status, message }) => <></>}
+        render={({ subscribe, status, message }) => (
+          <>
+            <Newsletter
+              status={status}
+              message={message}
+              onValidated={(formData) => subscribe(formData)}
+            />
+          </>
+        )}
       />
     </>
   );
