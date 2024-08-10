@@ -3,9 +3,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/icons/logo.jpg";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import linkedin from "../assets/img/0linkedin.svg";
+import facebook from "../assets/img/0facebook.svg";
+import instagram from "../assets/img/0instagram.svg";
+import whatsapp from "../assets/img/0whatsapp.svg";
+import twitter from "../assets/img/0twitter.svg";
+import github from "../assets/img/0github.svg";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -67,19 +70,31 @@ function NavbarComponent() {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
-                <img src={navIcon1} alt="nav" />
+              <a href="https://wa.link/t2k3ug" target="_blank">
+                <img src={whatsapp} alt="nav" />
               </a>
-              <a href="#">
-                <img src={navIcon2} alt="nav" />
+              <a href="https://linkedin.com/in/aniede" target="_blank">
+                <img src={linkedin} alt="nav" />
               </a>
-              <a href="#">
-                <img src={navIcon3} alt="nav" />
+              <a href="https://www.facebook.com/chibundu101/" target="_blank">
+                <img src={facebook} alt="nav" />
+              </a>
+              <a href="https://twitter.com/ikendul" target="_blank">
+                <img src={twitter} alt="nav" />
+              </a>
+              <a href="http://github.com/ikendu" target="_blank">
+                <img src={github} alt="nav" />
+              </a>
+              <a
+                href="https://www.instagram.com/chibundu.aniede"
+                target="_blank"
+              >
+                <img src={instagram} alt="nav" />
               </a>
             </div>
-            <button onClick={() => console.log(`connect`)} className="">
+            {/* <button onClick={() => console.log(`Connect`)} className="">
               Let's connect
-            </button>
+            </button> */}
           </span>
         </Navbar.Collapse>
       </Container>

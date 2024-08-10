@@ -2,6 +2,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import bannerImage from "../assets/img/header-img.svg";
 import { useEffect, useState } from "react";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export default function Banner() {
   const [focusText, setFocusText] = useState(``);
@@ -47,26 +49,41 @@ export default function Banner() {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1 className="head">
-              David Concept <br />
-              <span className="wrap">{focusText}</span>
-            </h1>
-            <p className="para">
-              The web development industry is evolving in a very fast rate and
-              virtually any features you can think of can be incorporated to
-              make it more informative. Web developer with 4+ years of
-              experience and more than 10 years in the Information Communication
-              Technology (ICT) related fields, adept in all stages of advanced
-              web development. Knowledgeable in user interface, API integration,
-              testing, and debugging processes. Bringing forth expertise in
-              implementation, installation, testing and maintenance of web
-              systems. Equipped with a diverse and promising skill-set and
-              proficient in an assortment of languages and web technologies.
-            </p>
-            <button onClick={() => console.log(`connect`)} className="btn">
-              Let's connect <ArrowRightCircle size={25} />
-            </button>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ``
+                  }
+                >
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1 className="head">
+                    David Concept <br />
+                    <span className="wrap">{focusText}</span>
+                  </h1>
+                  <p className="para">
+                    The web development industry is evolving in a very fast rate
+                    and virtually any features you can think of can be
+                    incorporated to make it more informative. Web developer with
+                    4+ years of experience and more than 10 years in the
+                    Information Communication Technology (ICT) related fields,
+                    adept in all stages of advanced web development.
+                    Knowledgeable in user interface, API integration, testing,
+                    and debugging processes. Bringing forth expertise in
+                    implementation, installation, testing and maintenance of web
+                    systems. Equipped with a diverse and promising skill-set and
+                    proficient in an assortment of languages and web
+                    technologies.
+                  </p>
+                  <button
+                    onClick={() => console.log(`connect`)}
+                    className="btn"
+                  >
+                    Let's connect <ArrowRightCircle size={25} />
+                  </button>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={bannerImage} alt="Banner Image" className="img" />

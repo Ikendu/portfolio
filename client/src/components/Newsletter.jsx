@@ -1,40 +1,33 @@
 import { useEffect, useState } from "react";
 import { Alert, Col, Row } from "react-bootstrap";
 
-export default function Newsletter({ onValidate, status, message }) {
+export default function Newsletter({ onValidated, status, message }) {
   const [email, setEmail] = useState(``);
 
   // clear form only when the the status === `success`
   useEffect(() => {
-    if (status === `success`) clearFelds();
+    if (status === `success`) clearFields();
   }, [status]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    email && email.indexOf(`@`) && onValidate({ EMAIL: email });
+    email && email.indexOf(`@`) > -1 && onValidated({ EMAIL: email });
   };
 
   // clearing a single input form
-  const clearFelds = () => {
+  const clearFields = () => {
     setEmail(``);
   };
   return (
     <Col lg={12}>
-      <div className="newletter-bx">
+      <div className="newsletter-bx">
         <Row>
           <Col md={12} lg={6} xl={5}>
             <h3>Subscribe to our newsletter</h3>
-            {status === "sending" && (
-              <Alert style={{ color: "blue" }}>sending...</Alert>
-            )}
-            {status === "error" && (
-              <div
-                style={{ color: "red" }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-            )}
+            {status === "sending" && <Alert>sending...</Alert>}
+            {status === "error" && <Alert variant="danger">{message}</Alert>}
             {status === "success" && (
-              <Alert style={{ color: "green" }}>Subscribed !</Alert>
+              <Alert variant="success">Subscribed !</Alert>
             )}
           </Col>
           <Col md={6} xl={7}>
@@ -45,7 +38,8 @@ export default function Newsletter({ onValidate, status, message }) {
                   name=""
                   id=""
                   value={email}
-                  onSubmit={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter Email Address"
                 />
                 <button type="submit">Submit</button>
               </div>

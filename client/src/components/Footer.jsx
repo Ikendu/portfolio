@@ -20,15 +20,18 @@ export default function Footer() {
             />
           </Col>
           <Col sm={6} className="text-center text-sm-end">
-            <a href="#">
-              <img src={navIcon1} alt="nav" />
-            </a>
-            <a href="#">
-              <img src={navIcon2} alt="nav" />
-            </a>
-            <a href="#">
-              <img src={navIcon3} alt="nav" />
-            </a>
+            <div className="social-icon">
+              <a href="#">
+                <img src={navIcon1} alt="nav" />
+              </a>
+              <a href="#">
+                <img src={navIcon2} alt="nav" />
+              </a>
+              <a href="#">
+                <img src={navIcon3} alt="nav" />
+              </a>
+            </div>
+            <p>CopyRight 2024 @ All Right Reserved</p>
           </Col>
         </Row>
       </Container>
