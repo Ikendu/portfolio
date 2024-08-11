@@ -22,7 +22,11 @@ const carouselItems = [
   },
   {
     image: meter3,
-    text: `Brand Identity`,
+    text: `Graphics Design`,
+  },
+  {
+    image: meter2,
+    text: `Fullstack Dev`,
   },
 ];
 
@@ -54,12 +58,16 @@ export default function Skills() {
           <Col>
             <div className="skill-bx">
               <h2>Skills</h2>
-              <p>
-                make it more realistic and informative. Web developer with 4+
-                years of experience and more than 10 years in the Information
-                Communication Technology (ICT) related fields, adept in all
-                stages of advanced web development. Knowledgeable in user
-                interface, API integration,
+              <p className="text-justify">
+                <b>PROFICIENT:</b> React.js Tailwind CSS, JavaScript, Nextjs,
+                Nodejs, Typescript, MongoDB, Redux-Toolkit, HTML, CSS,
+                Bootstrap, Sass, Express
+                <br />
+                <b>KNOWLEDGEBLE:</b> Socket.io, Web RTC, Java, Excellent ICT
+                Skills, Customer Service Skill Fair: PHP, C, Ruby, Ruby-on-Rails
+                <br />
+                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, ICT, Data
+                Entry and Graphics Design
               </p>
               <Carousel
                 responsive={responsive}

@@ -14,8 +14,9 @@ export default function Banner() {
   const toDisplay = [
     `Computer Scientist`,
     `Web Engineer`,
-    `Mobile App Dev`,
+    `Frontend Major`,
     `ICT Specialist`,
+    `Graphics Designer`,
   ];
 
   useEffect(() => {
@@ -61,10 +62,9 @@ export default function Banner() {
                     David Concept <br />
                     <span className="wrap">{focusText}</span>
                   </h1>
+                  <p>DAVID ANIEDE </p>
                   <p className="para">
-                    The web development industry is evolving in a very fast rate
-                    and virtually any features you can think of can be
-                    incorporated to make it more informative. Web developer with
+                    Software engineer with more focus on Web technologies. With
                     4+ years of experience and more than 10 years in the
                     Information Communication Technology (ICT) related fields,
                     adept in all stages of advanced web development.
@@ -79,7 +79,13 @@ export default function Banner() {
                     onClick={() => console.log(`connect`)}
                     className="btn"
                   >
-                    Let's connect <ArrowRightCircle size={25} />
+                    <a
+                      href="https://wa.link/t2k3ug"
+                      target="_blank"
+                      className="flex gap-4"
+                    >
+                      Let's connect <ArrowRightCircle size={25} />
+                    </a>
                   </button>
                 </div>
               )}
