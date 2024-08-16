@@ -9,6 +9,7 @@ import instagram from "../assets/img/0instagram.svg";
 import whatsapp from "../assets/img/0whatsapp.svg";
 import twitter from "../assets/img/0twitter.svg";
 import github from "../assets/img/0github.svg";
+import TrackVisibility from "react-on-screen";
 
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState(`home`);
@@ -31,11 +32,19 @@ function NavbarComponent() {
     <Navbar expand="lg" className={scrolled ? `scrolled` : ``}>
       <Container>
         <Navbar.Brand href="#home">
-          <img
-            src={logo}
-            alt="Logo"
-            className="rounded-full max-w-[50px] border-3"
-          />
+          <TrackVisibility>
+            {({ isVisible }) => (
+              <div
+                className={isVisible ? "animate__animated animate__zoomIn" : ``}
+              >
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="rounded-full max-w-[50px] border-3"
+                />
+              </div>
+            )}
+          </TrackVisibility>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

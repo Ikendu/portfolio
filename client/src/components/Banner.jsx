@@ -94,7 +94,17 @@ export default function Banner() {
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={bannerImage} alt="Banner Image" className="img" />
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ``
+                  }
+                >
+                  <img src={bannerImage} alt="Banner Image" className="img" />
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
