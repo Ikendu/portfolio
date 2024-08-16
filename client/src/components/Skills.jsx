@@ -10,23 +10,39 @@ import colorSharp from "../assets/img/color-sharp.png";
 const carouselItems = [
   {
     image: meter1,
-    text: `Web Development`,
+    text: `React.js`,
   },
   {
     image: meter2,
-    text: `Web Design`,
+    text: `Vanilla JavaScript`,
   },
   {
     image: meter3,
-    text: `Web Management`,
+    text: `Tailwind CSS`,
   },
   {
     image: meter3,
-    text: `Graphics Design`,
+    text: `HTML & CSS`,
   },
   {
     image: meter2,
-    text: `Fullstack Dev`,
+    text: `Nextjs`,
+  },
+  {
+    image: meter2,
+    text: `Nodejs and MongoDB`,
+  },
+  {
+    image: meter2,
+    text: `Sass`,
+  },
+  {
+    image: meter2,
+    text: `Typescript`,
+  },
+  {
+    image: meter2,
+    text: `Express`,
   },
 ];
 
