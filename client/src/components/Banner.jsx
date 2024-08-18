@@ -6,6 +6,7 @@ import bannerImage from "../assets/img/landingImg1.png";
 import { useEffect, useState } from "react";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import RoundShow from "./RoundShow";
 
 export default function Banner() {
   const [focusText, setFocusText] = useState(``);
@@ -108,6 +109,7 @@ export default function Banner() {
           </Col>
         </Row>
       </Container>
+      <RoundShow />
     </section>
   );
 }

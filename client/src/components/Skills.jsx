@@ -1,49 +1,50 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+// import meter1 from "../assets/img/meter1.svg";
+// import meter2 from "../assets/img/meter2.svg";
+// import meter3 from "../assets/img/meter3.svg";
 // import meter4 from "../assets/img/meter4.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import MeterFifty from "../assets/icons/MeterFifty";
 
 const carouselItems = [
   {
-    image: meter1,
+    image: <MeterFifty />,
     text: `React.js`,
   },
-  {
-    image: meter2,
-    text: `Vanilla JavaScript`,
-  },
-  {
-    image: meter3,
-    text: `Tailwind CSS`,
-  },
-  {
-    image: meter3,
-    text: `HTML & CSS`,
-  },
-  {
-    image: meter2,
-    text: `Nextjs`,
-  },
-  {
-    image: meter2,
-    text: `Nodejs and MongoDB`,
-  },
-  {
-    image: meter2,
-    text: `Sass`,
-  },
-  {
-    image: meter2,
-    text: `Typescript`,
-  },
-  {
-    image: meter2,
-    text: `Express`,
-  },
+  // {
+  //   image: meter2,
+  //   text: `Vanilla JavaScript`,
+  // },
+  // {
+  //   image: meter3,
+  //   text: `Tailwind CSS`,
+  // },
+  // {
+  //   image: meter3,
+  //   text: `HTML & CSS`,
+  // },
+  // {
+  //   image: meter2,
+  //   text: `Nextjs`,
+  // },
+  // {
+  //   image: meter1,
+  //   text: `Nodejs and MongoDB`,
+  // },
+  // {
+  //   image: meter2,
+  //   text: `Sass`,
+  // },
+  // {
+  //   image: meter2,
+  //   text: `Typescript`,
+  // },
+  // {
+  //   image: meter2,
+  //   text: `Express`,
+  // },
 ];
 
 export default function Skills() {
@@ -92,7 +93,8 @@ export default function Skills() {
               >
                 {carouselItems.map((item, idx) => (
                   <div key={idx} className="item">
-                    <img src={item.image} />
+                    {/* <img src={item.image} /> */}
+                    <div className="img">{item.image}</div>
                     <h5>{item.text}</h5>
                   </div>
                 ))}
