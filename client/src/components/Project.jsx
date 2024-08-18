@@ -42,9 +42,20 @@ export default function Project() {
           <Col>
             <h2>Projecsts</h2>
             <p>
-              related fields, adept in all stages of advanced web development.
-              Knowledgeable in user interface, API integration, testing, and
-              debugging processes. Bringing forth
+              The project I have worked on in the course of my career is divided
+              into tabs as seen below.
+              <br />
+              The first tab contains group projects where I have made numerous
+              contributions.
+              <br />
+              The second tab contains freelance projects I have done for some
+              clients
+              <br />
+              The Third tab conatains some personal projects I have done for
+              various reasons
+              <br />
+              The fourth tab contains some development test I have taken in the
+              course of my career
             </p>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
               <Nav
