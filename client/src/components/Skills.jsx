@@ -1,11 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import meter90 from "../assets/meter/meter90.png";
 import meter55 from "../assets/meter/meter55.png";
+import meter65 from "../assets/meter/meter65.png";
 import meter75 from "../assets/meter/meter75.png";
 import meter80 from "../assets/meter/meter80.png";
 import meter85 from "../assets/meter/meter85.png";
+import meter90 from "../assets/meter/meter90.png";
 import meter95 from "../assets/meter/meter95.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import MeterFifty from "../assets/icons/MeterFifty";
@@ -36,7 +37,7 @@ const carouselItems = [
     text: `Nodejs and MongoDB`,
   },
   {
-    image: meter80,
+    image: meter65,
     text: `Sass`,
   },
   {
@@ -78,16 +79,17 @@ export default function Skills() {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p className="text-justify">
-                <b>PROFICIENT:</b> React.js Tailwind CSS, JavaScript, Nextjs,
-                Nodejs, Typescript, MongoDB, Redux-Toolkit, HTML, CSS,
-                Bootstrap, Sass, Express
+                <b>LIBRARIES/FRAMEWORKS: </b> React.js, Tailwind CSS, Bootstrap,
+                Nextjs, Express, Nodejs, MongoDB, Socket.io, Web RTC,
+                Ruby-on-Rails, HTML, CSS, Sass.
                 <br />
-                <b>KNOWLEDGEBLE:</b> Socket.io, Web RTC, Java, Excellent ICT
-                Skills, Customer Service Skill Fair: PHP, C, Ruby, Ruby-on-Rails
+                <b>PROGRAMMING LANGUAGES:</b> JavaScript, Java, Typescript,
+                Ruby, PHP, C.
                 <br />
-                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, Data
-                Entry and Graphics Design
+                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, Graphics
+                Design, ICT Personnel
               </p>
+              <h2 className="tool-set">Tool-Set and Proficiency llevel</h2>
               <Carousel
                 responsive={responsive}
                 infinite={true}
