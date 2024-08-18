@@ -1,83 +1,61 @@
 import team from "../assets/img/project-team.jpg";
 import team1 from "../assets/img/project-team1.jpg";
 import team2 from "../assets/img/project-team2.jpg";
-import image1 from "../assets/img/project-img3.png";
-import image2 from "../assets/img/project-img3.png";
+import freelance from "../assets/img/project-freelance.jpg";
+// import freelance1 from "../assets/img/project-freelance1.jpg";
+import procalc from "../assets/img/project-personal10.jpg";
+import proMovies from "../assets/img/project-personal1.jpg";
+import image2 from "../assets/img/project-img2.png";
 import image3 from "../assets/img/project-img3.png";
-import image4 from "../assets/img/project-img3.png";
-import image5 from "../assets/img/project-img3.png";
 
 export const teamWorks = [
   {
-    title: `title`,
-    desc: `desc`,
+    title: `Nanocode Official website`,
+    desc: `Previous employer's company official website `,
     image: team,
+    link: `https://www.nanocodes.com.ng/`,
   },
   {
-    title: `title`,
-    desc: `desc`,
+    title: `Andromedia`,
+    desc: `A software as a service website that focus on customer service communication`,
     image: team1,
+    link: `https://www.andromedia.cc/`,
   },
   {
-    title: `title`,
-    desc: `desc`,
+    title: `Bulloak`,
+    desc: `A financial service for savings, crypto exchange and retirement benefits`,
     image: team2,
+    link: `https://bulloakltd.com/`,
   },
 ];
 
 export const freelanceWorks = [
   {
-    title: `title`,
-    desc: `desc`,
-    image: image1,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image2,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image3,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image4,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image5,
+    title: `Gift Hair`,
+    desc: `An ecommerce website for selling of hair, attachment and wig`,
+    image: freelance,
+    link: `https://gifthairs.netlify.app`,
   },
 ];
 
 export const personalWorks = [
   {
-    title: `title`,
-    desc: `desc`,
-    image: image1,
+    title: `Calculator`,
+    desc: `For mathematical operations`,
+    image: procalc,
+    link: `https://morecalc.netlify.app/`,
+  },
+  {
+    title: `Movie List`,
+    desc: `A movie search system that gives you the list of related names of movies searched. `,
+    image: proMovies,
+    link: `https://nemovies.netlify.app/`,
   },
   {
     title: `title`,
     desc: `desc`,
     image: image2,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image3,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image4,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image5,
+    link: ``,
   },
 ];
 
@@ -85,26 +63,19 @@ export const testWorks = [
   {
     title: `title`,
     desc: `desc`,
-    image: image1,
+    image: image2,
+    link: ``,
   },
   {
     title: `title`,
     desc: `desc`,
     image: image2,
+    link: ``,
   },
   {
     title: `title`,
     desc: `desc`,
     image: image3,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image4,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image5,
+    link: ``,
   },
 ];

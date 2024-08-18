@@ -16,7 +16,7 @@ export default function Project() {
           <Col>
             <h2>Projecsts</h2>
             <p>
-              Projects I have worked on in the course of my career is divided
+              Projects I have worked on in the course of my career are divided
               into tabs as seen below. Each tab contains different projects in
               that gategory
               {/* <br />
@@ -42,7 +42,7 @@ export default function Project() {
                   <Nav.Link eventKey="first">Team Works</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Freelance Woks</Nav.Link>
+                  <Nav.Link eventKey="second">Freelance&nbsp;Works</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="third">Personal&nbsp;Projects</Nav.Link>
