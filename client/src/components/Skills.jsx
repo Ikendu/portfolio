@@ -1,50 +1,52 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import meter1 from "../assets/img/meter1.svg";
-// import meter2 from "../assets/img/meter2.svg";
-// import meter3 from "../assets/img/meter3.svg";
-// import meter4 from "../assets/img/meter4.svg";
+import meter90 from "../assets/meter/meter90.png";
+import meter55 from "../assets/meter/meter55.png";
+import meter75 from "../assets/meter/meter75.png";
+import meter80 from "../assets/meter/meter80.png";
+import meter85 from "../assets/meter/meter85.png";
+import meter95 from "../assets/meter/meter95.png";
 import colorSharp from "../assets/img/color-sharp.png";
 import MeterFifty from "../assets/icons/MeterFifty";
 
 const carouselItems = [
   {
-    image: <MeterFifty />,
+    image: meter95,
     text: `React.js`,
   },
-  // {
-  //   image: meter2,
-  //   text: `Vanilla JavaScript`,
-  // },
-  // {
-  //   image: meter3,
-  //   text: `Tailwind CSS`,
-  // },
-  // {
-  //   image: meter3,
-  //   text: `HTML & CSS`,
-  // },
-  // {
-  //   image: meter2,
-  //   text: `Nextjs`,
-  // },
-  // {
-  //   image: meter1,
-  //   text: `Nodejs and MongoDB`,
-  // },
-  // {
-  //   image: meter2,
-  //   text: `Sass`,
-  // },
-  // {
-  //   image: meter2,
-  //   text: `Typescript`,
-  // },
-  // {
-  //   image: meter2,
-  //   text: `Express`,
-  // },
+  {
+    image: meter85,
+    text: `Vanilla JavaScript`,
+  },
+  {
+    image: meter90,
+    text: `Tailwind CSS`,
+  },
+  {
+    image: meter80,
+    text: `HTML & CSS`,
+  },
+  {
+    image: meter55,
+    text: `Nextjs`,
+  },
+  {
+    image: meter75,
+    text: `Nodejs and MongoDB`,
+  },
+  {
+    image: meter80,
+    text: `Sass`,
+  },
+  {
+    image: meter55,
+    text: `Typescript`,
+  },
+  {
+    image: meter75,
+    text: `Express`,
+  },
 ];
 
 export default function Skills() {
@@ -93,8 +95,8 @@ export default function Skills() {
               >
                 {carouselItems.map((item, idx) => (
                   <div key={idx} className="item">
-                    {/* <img src={item.image} /> */}
-                    <div className="img">{item.image}</div>
+                    <img src={item.image} />
+                    {/* <div className="img ">{item.image}</div> */}
                     <h5>{item.text}</h5>
                   </div>
                 ))}
