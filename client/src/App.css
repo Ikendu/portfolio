@@ -384,10 +384,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   margin: 14px auto 30px auto;
   text-align: center;
-  width: 56%;
+  width: 80%;
 }
 .project .nav.nav-pills {
-  width: 72%;
+  width: 80%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
@@ -411,6 +411,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
+  cursor: pointer;
 }
 .project .nav.nav-pills .nav-link::before {
   content: "";
@@ -446,6 +447,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  cursor: pointer;
 }
 .proj-imgbx::before {
   content: "";

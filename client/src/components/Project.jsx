@@ -42,9 +42,10 @@ export default function Project() {
           <Col>
             <h2>Projecsts</h2>
             <p>
-              The project I have worked on in the course of my career is divided
-              into tabs as seen below.
-              <br />
+              Projects I have worked on in the course of my career is divided
+              into tabs as seen below. Each tab contains different projects in
+              that gategory
+              {/* <br />
               The first tab contains group projects where I have made numerous
               contributions.
               <br />
@@ -55,7 +56,7 @@ export default function Project() {
               various reasons
               <br />
               The fourth tab contains some development test I have taken in the
-              course of my career
+              course of my career */}
             </p>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
               <Nav
@@ -84,9 +85,27 @@ export default function Project() {
                     ))}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
-                <Tab.Pane eventKey="third">Second tab content</Tab.Pane>
-                <Tab.Pane eventKey="fourth">Second tab content</Tab.Pane>
+                <Tab.Pane eventKey="second">
+                  <Row>
+                    {projects.map((project, idx) => (
+                      <CardContents key={idx} {...project} />
+                    ))}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="third">
+                  <Row>
+                    {projects.map((project, idx) => (
+                      <CardContents key={idx} {...project} />
+                    ))}
+                  </Row>
+                </Tab.Pane>
+                <Tab.Pane eventKey="fourth">
+                  <Row>
+                    {projects.map((project, idx) => (
+                      <CardContents key={idx} {...project} />
+                    ))}
+                  </Row>
+                </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
