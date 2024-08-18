@@ -9,7 +9,6 @@ import meter85 from "../assets/meter/meter85.png";
 import meter90 from "../assets/meter/meter90.png";
 import meter95 from "../assets/meter/meter95.png";
 import colorSharp from "../assets/img/color-sharp.png";
-import MeterFifty from "../assets/icons/MeterFifty";
 
 const carouselItems = [
   {
