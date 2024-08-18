@@ -394,7 +394,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   overflow: hidden;
 }
 .project .nav.nav-pills .nav-item {
-  width: 33.33333%;
+  width: 20%;
+  background-color: #1d1b1b;
+  border-left: 1px solid black;
 }
 .project .nav.nav-pills .nav-link {
   background-color: transparent;

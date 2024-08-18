@@ -64,13 +64,16 @@ export default function Project() {
                 id="pills-tab"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                  <Nav.Link eventKey="first">Team Works</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                  <Nav.Link eventKey="second">Freelance Woks</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                  <Nav.Link eventKey="third">Personal&nbsp;Projects</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="fourth">Test Projects</Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>
@@ -83,6 +86,7 @@ export default function Project() {
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">Second tab content</Tab.Pane>
                 <Tab.Pane eventKey="third">Second tab content</Tab.Pane>
+                <Tab.Pane eventKey="fourth">Second tab content</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
