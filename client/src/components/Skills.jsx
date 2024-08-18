@@ -83,7 +83,7 @@ export default function Skills() {
                 <b>KNOWLEDGEBLE:</b> Socket.io, Web RTC, Java, Excellent ICT
                 Skills, Customer Service Skill Fair: PHP, C, Ruby, Ruby-on-Rails
                 <br />
-                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, ICT, Data
+                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, Data
                 Entry and Graphics Design
               </p>
               <Carousel
