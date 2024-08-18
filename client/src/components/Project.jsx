@@ -1,39 +1,13 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import CardContents from "./CardContents";
 import imageRigh from "../assets/img/color-sharp2.png";
-import image1 from "../assets/img/project-img1.png";
-import image2 from "../assets/img/project-img2.png";
-import image3 from "../assets/img/project-img3.png";
-import image4 from "../assets/img/project-img3.png";
-import image5 from "../assets/img/project-img3.png";
+import {
+  freelanceWorks,
+  personalWorks,
+  teamWorks,
+  testWorks,
+} from "./projectAll";
 
-const projects = [
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image1,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image2,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image3,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image4,
-  },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image5,
-  },
-];
 export default function Project() {
   return (
     <section className="project" id="projects">
@@ -80,28 +54,28 @@ export default function Project() {
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Row>
-                    {projects.map((project, idx) => (
+                    {teamWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <Row>
-                    {projects.map((project, idx) => (
+                    {freelanceWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
                   <Row>
-                    {projects.map((project, idx) => (
+                    {personalWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
                   <Row>
-                    {projects.map((project, idx) => (
+                    {testWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
                     ))}
                   </Row>
