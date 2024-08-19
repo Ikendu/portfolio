@@ -6,9 +6,12 @@ import freelance from "../assets/img/project-freelance.jpg";
 import procalc from "../assets/img/project-personal10.jpg";
 import proMovies from "../assets/img/project-personal1.jpg";
 import proFile from "../assets/img/project-personal.jpg";
-import image1 from "../assets/img/project-img1.png";
+import testProject from "../assets/img/testProject.jpg";
 import image2 from "../assets/img/project-img2.png";
 import image3 from "../assets/img/project-img3.png";
+// import image1 from "../assets/img/project-img1.png";
+// import image2 from "../assets/img/project-img2.png";
+// import image3 from "../assets/img/project-img3.png";
 
 export const teamWorks = [
   {
@@ -63,10 +66,10 @@ export const personalWorks = [
 
 export const testWorks = [
   {
-    title: `title`,
-    desc: `desc`,
-    image: image2,
-    link: ``,
+    title: `Optimization`,
+    desc: `Test on optimization and mobile responsiveness`,
+    image: testProject,
+    link: `https://show-us-work.vercel.app/`,
   },
   {
     title: `title`,
