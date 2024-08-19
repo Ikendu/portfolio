@@ -33,7 +33,7 @@ export const teamWorks = [
 
 export const freelanceWorks = [
   {
-    title: `Gift Hair`,
+    title: `Gift Hair 👩`,
     desc: `An ecommerce website for selling of hair, attachment and wig`,
     image: freelance,
     link: `https://gifthairs.netlify.app`,
@@ -42,13 +42,13 @@ export const freelanceWorks = [
 
 export const personalWorks = [
   {
-    title: `Calculator`,
+    title: `Basic Calculator 🧮`,
     desc: `For mathematical operations`,
     image: procalc,
     link: `https://morecalc.netlify.app/`,
   },
   {
-    title: `Movie List`,
+    title: `Movie List 🎬🎦`,
     desc: `A movie search system that gives you the list of related names of movies searched. `,
     image: proMovies,
     link: `https://nemovies.netlify.app/`,
