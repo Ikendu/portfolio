@@ -12,19 +12,19 @@ import image3 from "../assets/img/project-img3.png";
 
 export const teamWorks = [
   {
-    title: `Nanocode Official website`,
+    title: `Nanocode Official website 🏢`,
     desc: `Previous employer's company official website `,
     image: team,
     link: `https://www.nanocodes.com.ng/`,
   },
   {
-    title: `Andromedia`,
+    title: `Andromedia 💻 `,
     desc: `A software as a service website that focus on customer service communication`,
     image: team1,
     link: `https://www.andromedia.cc/`,
   },
   {
-    title: `Bulloak`,
+    title: `Bulloak 🏦`,
     desc: `A financial service for savings, crypto exchange and retirement benefits`,
     image: team2,
     link: `https://bulloakltd.com/`,
@@ -54,7 +54,7 @@ export const personalWorks = [
     link: `https://nemovies.netlify.app/`,
   },
   {
-    title: `David Portfolio`,
+    title: `David Portfolio 💼`,
     desc: `List and Description of all past and present design and implentation activities`,
     image: proFile,
     link: `https://davidaniede.vercel.app/`,
