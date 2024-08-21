@@ -88,7 +88,7 @@ export default function Skills() {
                 <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, Graphics
                 Design, ICT Personnel
               </p>
-              <h2 className="tool-set">Tool-Set and Proficiency llevel</h2>
+              <h2 className="tool-set">Tool-Set and Proficiency level</h2>
               <Carousel
                 responsive={responsive}
                 infinite={true}
