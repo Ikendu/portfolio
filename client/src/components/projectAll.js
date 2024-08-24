@@ -9,7 +9,7 @@ import proFile from "../assets/img/project-personal.jpg";
 import testProject from "../assets/img/testProject.jpg";
 import image2 from "../assets/img/project-img2.png";
 import image3 from "../assets/img/project-img3.png";
-// import image1 from "../assets/img/project-img1.png";
+import testProject1 from "../assets/img/testProject1.jpg";
 // import image2 from "../assets/img/project-img2.png";
 // import image3 from "../assets/img/project-img3.png";
 
@@ -48,7 +48,7 @@ export const personalWorks = [
     title: `Basic Calculator 🧮`,
     desc: `For mathematical operations`,
     image: procalc,
-    link: `https://morecalc.netlify.app/`,
+    link: `https://calculatedavid.vercel.app/`,
   },
   {
     title: `Movie List 🎬🎦`,
@@ -72,15 +72,15 @@ export const testWorks = [
     link: `https://show-us-work.vercel.app/`,
   },
   {
-    title: `title`,
-    desc: `desc`,
-    image: image2,
-    link: ``,
+    title: `Recreate and optimize`,
+    desc: `Test on recreation of original page with mobile responsiveness`,
+    image: testProject1,
+    link: `https://tegamedia.vercel.app/`,
   },
-  {
-    title: `title`,
-    desc: `desc`,
-    image: image3,
-    link: ``,
-  },
+  // {
+  //   title: `title`,
+  //   desc: `desc`,
+  //   image: image3,
+  //   link: ``,
+  // },
 ];
