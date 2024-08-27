@@ -10,7 +10,7 @@ import testProject from "../assets/img/testProject.jpg";
 import image2 from "../assets/img/project-img2.png";
 import image3 from "../assets/img/project-img3.png";
 import testProject1 from "../assets/img/testProject1.jpg";
-// import image2 from "../assets/img/project-img2.png";
+import testProject2 from "../assets/img/testProject2.jpg";
 // import image3 from "../assets/img/project-img3.png";
 
 export const teamWorks = [
@@ -77,10 +77,10 @@ export const testWorks = [
     image: testProject1,
     link: `https://tegamedia.vercel.app/`,
   },
-  // {
-  //   title: `title`,
-  //   desc: `desc`,
-  //   image: image3,
-  //   link: ``,
-  // },
+  {
+    title: `Video Call`,
+    desc: `Video call with credit deduction capabilities`,
+    image: testProject2,
+    link: `https://peerjs-call.vercel.app/`,
+  },
 ];

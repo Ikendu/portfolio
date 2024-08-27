@@ -20,7 +20,7 @@ export default function Newsletter({ onValidated, status, message }) {
   };
   return (
     <Col lg={12}>
-      <div className="newsletter-bx">
+      <div className="newsletter-bx md:p-24 md:px-28 py-16 px-10">
         <Row>
           <Col md={12} lg={6} xl={5}>
             <h3>Subscribe to our newsletter</h3>
@@ -32,7 +32,7 @@ export default function Newsletter({ onValidated, status, message }) {
           </Col>
           <Col md={6} xl={7}>
             <form onSubmit={handleSubmit}>
-              <div className="new-email-bx">
+              <div className="new-email-bx md:m-0 mt-6">
                 <input
                   type="email"
                   name=""
@@ -40,8 +40,11 @@ export default function Newsletter({ onValidated, status, message }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter Email Address"
+                  className=""
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className="p-3 px-4">
+                  Submit
+                </button>
               </div>
             </form>
           </Col>
