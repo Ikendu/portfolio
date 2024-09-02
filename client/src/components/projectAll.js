@@ -10,7 +10,7 @@ import testProject from "../assets/img/testProject.jpg";
 // import image2 from "../assets/img/project-img2.png";
 // import image3 from "../assets/img/project-img3.png";
 import testProject1 from "../assets/img/testProject1.jpg";
-import testProject2 from "../assets/img/testProject2.jpg";
+import testProject3 from "../assets/img/testProject3.jpg";
 // import image3 from "../assets/img/project-img3.png";
 
 export const teamWorks = [
@@ -80,7 +80,7 @@ export const testWorks = [
   {
     title: `Video Call`,
     desc: `Video call with credit deduction capabilities`,
-    image: testProject2,
+    image: testProject3,
     link: `https://peerjs-call.vercel.app/`,
   },
 ];
