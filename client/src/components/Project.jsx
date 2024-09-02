@@ -35,11 +35,13 @@ export default function Project() {
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
               <Nav
                 variant="pills"
-                className="flex-row  nav-pills justify-center mb-5 items-center "
+                className="flex-row  nav-pills justify-center mb-5 items-center"
                 id="pills-tab"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Team Works</Nav.Link>
+                  <Nav.Link className="text-xs" eventKey="first">
+                    Team Works
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="second">Freelance&nbsp;Works</Nav.Link>

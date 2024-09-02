@@ -61,10 +61,19 @@ export default function Banner() {
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1 className="head">
-                    David Concept <br />
-                    <span className="wrap">{focusText}</span>
+                    David Aniede <br />
+                    <span
+                      className="wrap"
+                      title="Computer Scientist, Fullstack Web Developer, Frontend Major, ICT Specialist, Graphics Designer"
+                    >
+                      {focusText}
+                    </span>
+                    <p className="py-2">
+                      Computer Scientist, Fullstack Web Developer, Frontend
+                      Major, ICT Specialist, Graphics Designer
+                    </p>
                   </h1>
-                  <p>DAVID ANIEDE </p>
+                  {/* <p>DAVID ANIEDE </p>
                   <p className="para">
                     Software engineer with more focus on Web technologies. With
                     4+ years of experience and more than 10 years in the
@@ -76,7 +85,7 @@ export default function Banner() {
                     systems. Equipped with a diverse and promising skill-set and
                     proficient in an assortment of languages and web
                     technologies.
-                  </p>
+                  </p> */}
                   <button
                     onClick={() => console.log(`connect`)}
                     className="btn"
