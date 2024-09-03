@@ -56,10 +56,12 @@ export default function Banner() {
               {({ isVisible }) => (
                 <div
                   className={
-                    isVisible ? "animate__animated animate__fadeIn" : ``
+                    isVisible
+                      ? "animate__animated animate__fadeIn text-center md:text-left"
+                      : ``
                   }
                 >
-                  <span className="tagline">Welcome to my Portfolio</span>
+                  <span className="tagline">Welcome to David Portfolio</span>
                   <h1 className="head">
                     David Aniede <br />
                     <span
