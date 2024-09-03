@@ -58,11 +58,11 @@ export default function Banner() {
                   className={
                     isVisible
                       ? "animate__animated animate__fadeIn text-center md:text-left"
-                      : ``
+                      : `text-center md:text-left`
                   }
                 >
                   <span className="tagline">Welcome to David Portfolio</span>
-                  <h1 className="head">
+                  <h1 className="head text-5xl">
                     David Aniede <br />
                     <span
                       className="wrap"
@@ -70,11 +70,14 @@ export default function Banner() {
                     >
                       {focusText}
                     </span>
-                    <p className="py-2">
-                      Computer Scientist, Fullstack Web Developer, Frontend
-                      Major, ICT Specialist, Graphics Designer
-                    </p>
                   </h1>
+                  <p
+                    className=" para +
+                  -py-2"
+                  >
+                    Computer Scientist, Fullstack Web Developer, Frontend Major,
+                    ICT Specialist, Graphics Designer
+                  </p>
                   {/* <p>DAVID ANIEDE </p>
                   <p className="para">
                     Software engineer with more focus on Web technologies. With

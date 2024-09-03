@@ -272,7 +272,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  /* font-size: 65px; */
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -335,7 +335,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background: #151515;
   border-radius: 64px;
   text-align: center;
-  padding: 60px 50px;
+  /* padding: 60px 50px; */
   margin-top: -60px;
 }
 .skill h2 {
@@ -347,7 +347,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  margin: 14px 0 75px 0;
+  margin: 14px 0 25px 0;
 }
 .skill-slider {
   width: 80%;

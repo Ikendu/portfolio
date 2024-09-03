@@ -75,19 +75,32 @@ export default function Skills() {
       <Container>
         <Row>
           <Col>
-            <div className="skill-bx">
+            <div className="skill-bx p-3 py-5 ">
               <h2>Skills</h2>
-              <p className="text-justify">
-                <b>LIBRARIES/FRAMEWORKS: </b> React.js, Tailwind CSS, Bootstrap,
-                Nextjs, Express, Nodejs, MongoDB, Socket.io, Web RTC,
-                Ruby-on-Rails, HTML, CSS, Sass.
-                <br />
-                <b>PROGRAMMING LANGUAGES:</b> JavaScript, Java, Typescript,
-                Ruby, PHP, C.
-                <br />
-                <b>OTHER SKILLS:</b> Computer Software/OS Maintenance, Graphics
-                Design, ICT Personnel
-              </p>
+              <div className="text-justify md:mx-20">
+                <p>
+                  <b className="text-2xl text-lime-300">
+                    LIBRARIES/FRAMEWORKS:{" "}
+                  </b>
+                  <br />
+                  React.js, Tailwind CSS, Bootstrap, Nextjs, Express, Nodejs,
+                  MongoDB, Socket.io, Web RTC, Ruby-on-Rails, HTML, CSS, Sass.
+                </p>
+
+                <p>
+                  <b className="text-[1.3rem] text-lime-300 ">
+                    PROGRAMMING LANGUAGES:
+                  </b>{" "}
+                  <br /> JavaScript, Java, Typescript, Ruby, PHP, C.
+                </p>
+
+                <p>
+                  <span className="text-2xl text-lime-300 ">OTHER SKILLS:</span>
+                  <br />
+                  Computer Software/OS Maintenance, Graphics Design, ICT
+                  Personnel
+                </p>
+              </div>
               <h2 className="tool-set">Tool-Set and Proficiency level</h2>
               <Carousel
                 responsive={responsive}
