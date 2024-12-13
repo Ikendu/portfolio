@@ -10,6 +10,10 @@ import meter85 from "../assets/meter/meter85.png";
 import meter90 from "../assets/meter/meter90.png";
 import meter95 from "../assets/meter/meter95.png";
 import colorSharp from "../assets/img/color-sharp.png";
+import nextjsIcon from "../assets/icons/nextjsIcon.svg";
+import tailwind from "../assets/icons/Tailwind.svg";
+import diamond from "../assets/icons/diamond.svg";
+import nodejs from "../assets/icons/nodejs.svg";
 
 const carouselItems = [
   {
@@ -90,18 +94,50 @@ export default function Skills() {
                         <li>
                           React.js <i class="fa-brands fa-react"></i>
                         </li>
-                        <li>Nextjs</li>
-                        <li>Ruby-on-Rails</li>
+                        <li>
+                          Nextjs
+                          <img
+                            src={nextjsIcon}
+                            alt=""
+                            className=" bg-white rounded-full w-5"
+                          />
+                        </li>
+                        <li>
+                          Ruby-on-Rails
+                          <img
+                            src={diamond}
+                            alt=""
+                            className=" bg-white rounded-full w-5 p-1"
+                          />
+                        </li>
                       </ul>
                       <ul>
-                        <li>Tailwind</li>
-                        <li>Bootstrap</li>
-                        <li>CSS</li>
+                        <li>
+                          Tailwind
+                          <img
+                            src={tailwind}
+                            alt=""
+                            className=" bg-white rounded-full w-5 p-1"
+                          />
+                        </li>
+                        <li>
+                          Bootstrap <i class="fa-brands fa-bootstrap"></i>
+                        </li>
+                        <li>
+                          CSS <i class="fa-brands fa-css3-alt p-1"></i>
+                        </li>
                       </ul>
                     </div>
                     <div className="flex gap-10">
                       <ul>
-                        <li>Nodejs</li>
+                        <li>
+                          Nodejs{" "}
+                          <img
+                            src={nodejs}
+                            alt=""
+                            className=" bg-white rounded-full w-5 p-1"
+                          />
+                        </li>
                         <li>MongoDB</li>
                         <li>Express</li>
                       </ul>
