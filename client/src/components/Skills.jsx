@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { Facebook, Twitter } from "react-bootstrap-icons";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import meter55 from "../assets/meter/meter55.png";
@@ -78,14 +79,40 @@ export default function Skills() {
             <div className="skill-bx p-3 py-5 ">
               <h2>Skills</h2>
               <div className="text-justify md:mx-20">
-                <p>
+                <div>
                   <b className="text-2xl text-lime-300">
-                    LIBRARIES/FRAMEWORKS:{" "}
+                    LIBRARIES/FRAMEWORKS:
                   </b>
                   <br />
-                  React.js, Tailwind CSS, Bootstrap, Nextjs, Express, Nodejs,
-                  MongoDB, Socket.io, Web RTC, Ruby-on-Rails, HTML, CSS, Sass.
-                </p>
+                  <div className="flex gap-10 my-4 justify-content-evenly">
+                    <div className="flex gap-10 ">
+                      <ul>
+                        <li>
+                          React.js <i class="fa-brands fa-react"></i>
+                        </li>
+                        <li>Nextjs</li>
+                        <li>Ruby-on-Rails</li>
+                      </ul>
+                      <ul>
+                        <li>Tailwind</li>
+                        <li>Bootstrap</li>
+                        <li>CSS</li>
+                      </ul>
+                    </div>
+                    <div className="flex gap-10">
+                      <ul>
+                        <li>Nodejs</li>
+                        <li>MongoDB</li>
+                        <li>Express</li>
+                      </ul>
+                      <ul>
+                        <li>Web RTC</li>
+                        <li>Socket.io</li>
+                        <li>Sass</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
 
                 <p>
                   <b className="text-[1.3rem] text-lime-300 ">
