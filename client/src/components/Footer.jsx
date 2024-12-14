@@ -8,13 +8,15 @@ import instagram from "../assets/img/0instagram.svg";
 import whatsapp from "../assets/img/0whatsapp.svg";
 import twitter from "../assets/img/0twitter.svg";
 import github from "../assets/img/0github.svg";
+import DisplayPics from "./DisplayPics";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <Container>
         <Row className="align-item-center">
-          <MailChimpForm />
+          <DisplayPics />
+          {/* <MailChimpForm /> */}
           <Col sm={6}>
             <img
               src={logo}

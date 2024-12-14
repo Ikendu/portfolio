@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 import contactImg from "../assets/img/contact-img.svg";
 import { Col, Container, Row } from "react-bootstrap";
@@ -6,8 +7,7 @@ import TrackVisibility from "react-on-screen";
 
 export default function Contact() {
   const initialEntries = {
-    firstname: ``,
-    lastname: ``,
+    name: ``,
     phone: ``,
     email: ``,
     message: ``,
@@ -24,19 +24,20 @@ export default function Contact() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setButtonText(`Sending`);
-    // emailjs
-    //   .send("service_2yry7mf", "template_flz454q", formData, {
-    //     publicKey: "iPQWPyYdO6yD4VgQA",
-    //   })
-    //   .then(
-    //     (response) => {
-    //       console.log("SUCCESS!", response);
-    //       setLoading(false);
-    //     },
-    //     (err) => {
-    //       console.log("FAILED...", err);
-    //     }
-    //   );
+    emailjs
+      .send("service_2yry7mf", "template_flz454q", formDetails, {
+        publicKey: "iPQWPyYdO6yD4VgQA",
+      })
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response);
+          setButtonText("Send");
+          setFormDetails(initialEntries);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
 
     // let response = await fetch(`http://localhost:5000/contact`, {
     //   method: "POST",
@@ -77,26 +78,17 @@ export default function Contact() {
               <Row>
                 <Col sm={6} className="px-1">
                   <input
+                    required
                     type="text"
                     placeholder="Frist Name"
-                    value={formDetails.firstname}
-                    onChange={(e) =>
-                      handleFormChange(`firstname`, e.target.value)
-                    }
+                    value={formDetails.name}
+                    onChange={(e) => handleFormChange(`name`, e.target.value)}
                   />
                 </Col>
+
                 <Col sm={6} className="px-1">
                   <input
-                    type="text"
-                    placeholder="Last Name"
-                    value={formDetails.lastname}
-                    onChange={(e) =>
-                      handleFormChange(`lastname`, e.target.value)
-                    }
-                  />
-                </Col>
-                <Col sm={6} className="px-1">
-                  <input
+                    required
                     type="email"
                     placeholder="Your Email"
                     value={formDetails.email}
@@ -105,6 +97,7 @@ export default function Contact() {
                 </Col>
                 <Col sm={6} className="px-1">
                   <input
+                    required
                     type="tel"
                     placeholder="Your Phone Number"
                     value={formDetails.phone}
@@ -113,9 +106,10 @@ export default function Contact() {
                 </Col>
                 <Col>
                   <textarea
+                    required
                     rows={6}
                     placeholder="Your Message"
-                    value={formDetails.phone}
+                    value={formDetails.message}
                     onChange={(e) =>
                       handleFormChange(`message`, e.target.value)
                     }

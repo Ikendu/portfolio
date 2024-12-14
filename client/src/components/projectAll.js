@@ -22,7 +22,7 @@ export const teamWorks = [
   },
   {
     title: `Andromedia 💻 `,
-    desc: `A software as a service website that focus on customer service communication`,
+    desc: `A software as a service website that focus on customer real time communication`,
     image: team1,
     link: `https://www.andromedia.cc/`,
   },
