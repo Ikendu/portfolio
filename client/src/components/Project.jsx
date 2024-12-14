@@ -1,14 +1,19 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import CardContents from "./CardContents";
 import imageRigh from "../assets/img/color-sharp2.png";
+
 import {
   freelanceWorks,
   personalWorks,
   teamWorks,
   testWorks,
 } from "./projectAll";
+import { navItems } from "../data";
+import { useState } from "react";
 
 export default function Project() {
+  const [open, setOpen] = useState(null);
+
   return (
     <section className="project" id="projects">
       <Container>
@@ -19,18 +24,6 @@ export default function Project() {
               Projects I have worked on in the course of my career are divided
               into tabs as seen below. Each tab contains different projects in
               that category
-              {/* <br />
-              The first tab contains group projects where I have made numerous
-              contributions.
-              <br />
-              The second tab contains freelance projects I have done for some
-              clients
-              <br />
-              The Third tab conatains some personal projects I have done for
-              various reasons
-              <br />
-              The fourth tab contains some development test I have taken in the
-              course of my career */}
             </p>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
               <Nav
@@ -38,20 +31,17 @@ export default function Project() {
                 className="flex-row  nav-pills justify-center mb-5 items-center"
                 id="pills-tab"
               >
-                <Nav.Item>
-                  <Nav.Link className="text-xs" eventKey="first">
-                    .
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">.</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third">.</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fourth">.</Nav.Link>
-                </Nav.Item>
+                {navItems.map((nav, idx) => (
+                  <Nav.Item>
+                    <Nav.Link eventKey={nav.name} onClick={() => setOpen(idx)}>
+                      {open == idx ? (
+                        <i class="fa-solid fa-door-open"></i>
+                      ) : (
+                        <i class="fa-solid fa-door-closed"></i>
+                      )}
+                    </Nav.Link>
+                  </Nav.Item>
+                ))}
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">

@@ -99,3 +99,26 @@ export const responsive = {
     items: 1,
   },
 };
+
+export const navItems = [
+  {
+    id: 1,
+    name: "first",
+    icon: ".",
+  },
+  {
+    id: 2,
+    name: "second",
+    icon: ".",
+  },
+  {
+    id: 3,
+    name: "third",
+    icon: ".",
+  },
+  {
+    id: 4,
+    name: "fourth",
+    icon: ".",
+  },
+];

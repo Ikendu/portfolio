@@ -48,16 +48,17 @@ export default function Skills() {
                   </div>
                 </div>
 
-                <p className="flex flex-column gap-3">
+                <p className="flex flex-column gap-3 my-5">
                   <b className="text-[1.3rem] text-lime-300">
                     PROGRAMMING LANGUAGES:
                   </b>
-                  JavaScript, Java, Typescript, Ruby, PHP, C.
+                  <span className=" text-2xl">
+                    JavaScript, Java, Typescript, Ruby, PHP, C, Python
+                  </span>
                 </p>
 
-                <p>
+                <p className="flex flex-column gap-3">
                   <span className="text-2xl text-lime-300 ">OTHER SKILLS:</span>
-                  <br />
                   Computer Software/OS Maintenance, Graphics Design, ICT
                   Personnel
                 </p>
