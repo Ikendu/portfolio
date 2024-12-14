@@ -9,6 +9,18 @@ const skills = skillsIcons.filter((skill) => skill.id < 4);
 const skillss = skillsIcons.filter((skill) => skill.id > 3 && skill.id < 7);
 const skillsss = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 10);
 const skillssss = skillsIcons.filter((skill) => skill.id > 9 && skill.id < 13);
+function SkillSet({ skillSet }) {
+  return (
+    <ul>
+      {skillSet.map((skill, idx) => (
+        <li key={idx} className="flex gap-2">
+          <span>{skill.name} </span>
+          <img src={skill.icon} className=" bg-white rounded-full w-5" />
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function Skills() {
   return (
@@ -16,81 +28,20 @@ export default function Skills() {
       <Container>
         <Row>
           <Col>
-            <div className="skill-bx p-3 py-5 flex flex-column align-items-center">
+            <div className="skill-bx p-3 py-5 flex flex-column align-items-center gap-20">
               <h2>Skills</h2>
-              <div className="text-justify md:mx-20 ">
+              <div className="text-justify ">
                 <div className="">
                   <b className="text-2xl text-lime-300">
                     LIBRARIES/FRAMEWORKS:
                   </b>
                   <br />
-                  <div className="flex gap-20 my-4 justify-content-even">
-                    <div className="flex gap-20">
-                      <ul>
-                        {skills.map((skill, idx) => (
-                          <li key={idx}>
-                            <span>{skill.name} </span>
-                            <img
-                              src={skill.icon}
-                              className=" bg-white rounded-full w-5"
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                      <ul>
-                        {skillss.map((skill, idx) => (
-                          <li key={idx}>
-                            <span>{skill.name} </span>
-                            <img
-                              src={skill.icon}
-                              className=" bg-white rounded-full w-5"
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                      <ul>
-                        {skillsss.map((skill, idx) => (
-                          <li key={idx}>
-                            <span>{skill.name} </span>
-                            <img
-                              src={skill.icon}
-                              className=" bg-white rounded-full w-5"
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                      <ul>
-                        {skillssss.map((skill, idx) => (
-                          <li key={idx}>
-                            <span>{skill.name} </span>
-                            <img
-                              src={skill.icon}
-                              className=" bg-white rounded-full w-5"
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                      {/* <ul>
-                        <li>
-                          React.js <i class="fa-brands fa-react"></i>
-                        </li>
-                        <li>
-                          Nextjs
-                          <img
-                            src={nextjsIcon}
-                            alt=""
-                            className=" bg-white rounded-full w-5"
-                          />
-                        </li>
-                        <li>
-                          Ruby-on-Rails
-                          <img
-                            src={diamond}
-                            alt=""
-                            className=" bg-white rounded-full w-5 p-1"
-                          />
-                        </li>
-                      </ul> */}
+                  <div className="flex my-4">
+                    <div className="flex gap-5 flex-wrap mx-4 justify-content-between md:w-[750px]">
+                      <SkillSet skillSet={skills} />
+                      <SkillSet skillSet={skillss} />
+                      <SkillSet skillSet={skillsss} />
+                      <SkillSet skillSet={skillssss} />
                     </div>
                     <div className="flex gap-20"></div>
                   </div>
@@ -99,7 +50,7 @@ export default function Skills() {
                 <p>
                   <b className="text-[1.3rem] text-lime-300 ">
                     PROGRAMMING LANGUAGES:
-                  </b>{" "}
+                  </b>
                   <br /> JavaScript, Java, Typescript, Ruby, PHP, C.
                 </p>
 
