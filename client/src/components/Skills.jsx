@@ -9,11 +9,12 @@ const skills = skillsIcons.filter((skill) => skill.id < 4);
 const skillss = skillsIcons.filter((skill) => skill.id > 3 && skill.id < 7);
 const skillsss = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 10);
 const skillssss = skillsIcons.filter((skill) => skill.id > 9 && skill.id < 13);
+
 function SkillSet({ skillSet }) {
   return (
     <ul>
       {skillSet.map((skill, idx) => (
-        <li key={idx} className="flex gap-2">
+        <li key={idx} className="flex gap-2 my-2">
           <span>{skill.name} </span>
           <img src={skill.icon} className=" bg-white rounded-full w-5" />
         </li>
@@ -28,9 +29,9 @@ export default function Skills() {
       <Container>
         <Row>
           <Col>
-            <div className="skill-bx p-3 py-5 flex flex-column align-items-center gap-20">
+            <div className="skill-bx p-3 py-5 flex flex-column align-items-center gap-3 md:gap-20">
               <h2>Skills</h2>
-              <div className="text-justify ">
+              <div className="">
                 <div className="">
                   <b className="text-2xl text-lime-300">
                     LIBRARIES/FRAMEWORKS:

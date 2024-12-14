@@ -64,7 +64,7 @@ export const carouselItems = [
 export const skillsIcons = [
   { id: 1, name: "Reactjs", icon: facebookIcon },
   { id: 2, name: "Nextjs", icon: nextjsIcon },
-  { id: 3, name: "Ruby-on-Rails", icon: diamondIcon },
+  { id: 3, name: "HTML", icon: diamondIcon },
   { id: 4, name: "Tailwind", icon: tailwind },
   { id: 5, name: "Bootstrap", icon: bootstrapIcon },
   { id: 6, name: "CSS", icon: cssIcon },

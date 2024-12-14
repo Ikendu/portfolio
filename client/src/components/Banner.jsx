@@ -48,7 +48,7 @@ export default function Banner() {
   };
 
   return (
-    <section className="banner" id="home">
+    <section className="banner py-20 md:py-32 " id="home">
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
@@ -61,8 +61,8 @@ export default function Banner() {
                       : `text-center md:text-left`
                   }
                 >
-                  <span className="tagline">Welcome to David Portfolio</span>
-                  <h1 className="head text-5xl">
+                  <span className="tagline ">Welcome to David Portfolio</span>
+                  <h1 className="head text-3xl md:text-5xl">
                     David Aniede <br />
                     <span
                       className="wrap"
@@ -71,10 +71,7 @@ export default function Banner() {
                       {focusText}
                     </span>
                   </h1>
-                  <p
-                    className=" para +
-                  -py-2"
-                  >
+                  <p className=" para py-2">
                     Computer Scientist, Fullstack Web Developer, Frontend Major,
                     ICT Specialist, Graphics Designer
                   </p>
