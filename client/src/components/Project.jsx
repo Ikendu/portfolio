@@ -40,21 +40,22 @@ export default function Project() {
               >
                 <Nav.Item>
                   <Nav.Link className="text-xs" eventKey="first">
-                    Team Works
+                    .
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Freelance&nbsp;Works</Nav.Link>
+                  <Nav.Link eventKey="second">.</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Personal&nbsp;Projects</Nav.Link>
+                  <Nav.Link eventKey="third">.</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="fourth">Test Projects</Nav.Link>
+                  <Nav.Link eventKey="fourth">.</Nav.Link>
                 </Nav.Item>
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
+                  <h2>Team Works</h2>
                   <Row>
                     {teamWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -62,6 +63,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
+                  <h2>Freelance&nbsp;Works</h2>
                   <Row>
                     {freelanceWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -69,6 +71,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
+                  <h2>Personal&nbsp;Projects</h2>
                   <Row>
                     {personalWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -76,6 +79,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
+                  <h2>Test Projects</h2>
                   <Row>
                     {testWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
