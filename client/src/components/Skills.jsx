@@ -15,8 +15,8 @@ function SkillSet({ skillSet }) {
     <ul>
       {skillSet.map((skill, idx) => (
         <li key={idx} className="flex gap-2 my-2">
-          <span>{skill.name} </span>
           <img src={skill.icon} className=" bg-white rounded-full w-5" />
+          <span>{skill.name} </span>
         </li>
       ))}
     </ul>
@@ -48,11 +48,11 @@ export default function Skills() {
                   </div>
                 </div>
 
-                <p>
-                  <b className="text-[1.3rem] text-lime-300 ">
+                <p className="flex flex-column gap-3">
+                  <b className="text-[1.3rem] text-lime-300">
                     PROGRAMMING LANGUAGES:
                   </b>
-                  <br /> JavaScript, Java, Typescript, Ruby, PHP, C.
+                  JavaScript, Java, Typescript, Ruby, PHP, C.
                 </p>
 
                 <p>

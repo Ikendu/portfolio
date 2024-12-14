@@ -23,10 +23,9 @@ import web from "./assets/icons/express.svg";
 import socket from "./assets/icons/socket.svg";
 import react from "./assets/icons/react.svg";
 import sass from "./assets/icons/sass.svg";
-
+import css from "./assets/icons/css.svg";
 
 FacebookIcon;
-
 
 export const carouselItems = [
   {
@@ -67,18 +66,18 @@ export const carouselItems = [
   },
 ];
 export const skillsIcons = [
-  { id: 1, name: "Reactjs", icon: facebookIcon },
+  { id: 1, name: "Reactjs", icon: react },
   { id: 2, name: "Nextjs", icon: nextjsIcon },
-  { id: 3, name: "HTML", icon: diamondIcon },
+  { id: 3, name: "HTML", icon: html },
   { id: 4, name: "Tailwind", icon: tailwind },
-  { id: 5, name: "Bootstrap", icon: bootstrapIcon },
-  { id: 6, name: "CSS", icon: cssIcon },
+  { id: 5, name: "Bootstrap", icon: bootstrap },
+  { id: 6, name: "CSS", icon: css },
   { id: 7, name: "Nodejs", icon: nodejs },
   { id: 8, name: "MongoDB", icon: mongodb },
-  { id: 9, name: "Express", icon: mongodb },
-  { id: 10, name: "Web RTC", icon: cssIcon },
-  { id: 11, name: "Socket.io", icon: bootstrapIcon },
-  { id: 12, name: "Sass", icon: cssIcon },
+  { id: 9, name: "Express", icon: express },
+  { id: 10, name: "Web RTC", icon: web },
+  { id: 11, name: "Socket.io", icon: socket },
+  { id: 12, name: "Sass", icon: sass },
 ];
 
 export const responsive = {
