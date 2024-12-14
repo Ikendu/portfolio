@@ -324,8 +324,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .tool-set {
-  margin: 40px 0;
-  padding: 20px;
+  margin: 20px 0;
 }
 .skill {
   padding: 0 0 50px 0;
@@ -339,7 +338,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: -60px;
 }
 .skill h2 {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 700;
 }
 .skill p {
@@ -704,4 +703,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-family: sans-serif;
   font-size: 0.5em;
   text-anchor: middle;
+}
+@media (max-width: 400px) {
+  .skill h2 {
+    font-size: 30px;
+    font-weight: 700;
+  }
 }

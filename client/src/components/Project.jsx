@@ -18,7 +18,7 @@ export default function Project() {
             <p>
               Projects I have worked on in the course of my career are divided
               into tabs as seen below. Each tab contains different projects in
-              that gategory
+              that category
               {/* <br />
               The first tab contains group projects where I have made numerous
               contributions.
@@ -55,7 +55,7 @@ export default function Project() {
               </Nav>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <h2>Team Works</h2>
+                  <h3 className="text-3xl m-4">Team Works</h3>
                   <Row>
                     {teamWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -63,7 +63,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  <h2>Freelance&nbsp;Works</h2>
+                  <h3 className="text-3xl m-4">Freelance&nbsp;Works</h3>
                   <Row>
                     {freelanceWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -71,7 +71,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
-                  <h2>Personal&nbsp;Projects</h2>
+                  <h3 className="text-3xl m-4">Personal&nbsp;Projects</h3>
                   <Row>
                     {personalWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -79,7 +79,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
-                  <h2>Test Projects</h2>
+                  <h3 className="text-3xl m-4 text-center">Test Projects</h3>
                   <Row>
                     {testWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
