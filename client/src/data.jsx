@@ -16,12 +16,17 @@ import diamondIcon from "./assets/icons/diamond.svg";
 import nodejs from "./assets/icons/nodejs.svg";
 import mongodb from "./assets/icons/mongodb.svg";
 import FacebookIcon from "./assets/icons/FacebookIcon";
+import bootstrap from "./assets/icons/bootstrap.svg";
+import express from "./assets/icons/express.svg";
+import html from "./assets/icons/html.svg";
+import web from "./assets/icons/express.svg";
+import socket from "./assets/icons/socket.svg";
+import react from "./assets/icons/react.svg";
+import sass from "./assets/icons/sass.svg";
+
 
 FacebookIcon;
 
-const facebookIcon = <i class="fa-brands fa-react"></i>;
-const bootstrapIcon = <i class="fa-brands fa-bootstrap"></i>;
-const cssIcon = <i class="fa-brands fa-css3-alt p-1"></i>;
 
 export const carouselItems = [
   {

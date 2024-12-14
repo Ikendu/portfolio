@@ -24,21 +24,35 @@ export default function Contact() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setButtonText(`Sending`);
-    let response = await fetch(`http://localhost:5000/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText(`Send`);
-    let result = response.json();
-    setFormDetails(initialEntries);
-    if (result.code === 200) {
-      setStatus({ success: true, message: `Message sent successfully` });
-    } else {
-      setStatus({ success: false, message: `there was an error, try again ` });
-    }
+    // emailjs
+    //   .send("service_2yry7mf", "template_flz454q", formData, {
+    //     publicKey: "iPQWPyYdO6yD4VgQA",
+    //   })
+    //   .then(
+    //     (response) => {
+    //       console.log("SUCCESS!", response);
+    //       setLoading(false);
+    //     },
+    //     (err) => {
+    //       console.log("FAILED...", err);
+    //     }
+    //   );
+
+    // let response = await fetch(`http://localhost:5000/contact`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "Application/json",
+    //   },
+    //   body: JSON.stringify(formDetails),
+    // });
+    // setButtonText(`Send`);
+    // let result = response.json();
+    // setFormDetails(initialEntries);
+    // if (result.code === 200) {
+    //   setStatus({ success: true, message: `Message sent successfully` });
+    // } else {
+    //   setStatus({ success: false, message: `there was an error, try again ` });
+    // }
   };
   return (
     <section className="contact" id="contact">
