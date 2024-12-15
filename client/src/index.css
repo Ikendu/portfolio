@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .displayPics {
   background-image: url("./assets/icons/picPort.jpg");
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   border-radius: 20px;
@@ -27,6 +25,11 @@
   line-height: 25px;
   word-spacing: 5px;
   letter-spacing: 2px;
+}
+@media (max-width: 700px) {
+  .displayPics p {
+    max-width: 400px;
+  }
 }
 
 /* :root {
