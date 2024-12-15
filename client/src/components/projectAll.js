@@ -2,6 +2,8 @@ import team from "../assets/img/project-team.jpg";
 import team1 from "../assets/img/project-team1.jpg";
 import team2 from "../assets/img/project-team2.jpg";
 import freelance from "../assets/img/project-freelance.jpg";
+import decofront from "../assets/img/decofront.jpg";
+import oculusFront from "../assets/img/oculusFront.jpg";
 // import freelance1 from "../assets/img/project-freelance1.jpg";
 import procalc from "../assets/img/project-personal10.jpg";
 import proMovies from "../assets/img/project-personal1.jpg";
@@ -35,6 +37,18 @@ export const teamWorks = [
 ];
 
 export const freelanceWorks = [
+  {
+    title: `More-Links Deco 🎋`,
+    desc: `Elegant decoration website showcasing vibrant interiors, sleek layouts, highlighting creative aesthetics and modern web development skills.`,
+    image: decofront,
+    link: `https://moredeco.com.ng/`,
+  },
+  {
+    title: `Oculus Tech 💺`,
+    desc: `Futuristic tech website featuring sleek design, bold typography, interactive elements, and cutting-edge visuals.`,
+    image: oculusFront,
+    link: `https://oculustech.com.ng`,
+  },
   {
     title: `Gift Hair 👩`,
     desc: `An ecommerce website for selling of hair, attachment and wig`,
