@@ -32,12 +32,12 @@ export default function Project() {
                 id="pills-tab"
               >
                 {navItems.map((nav, idx) => (
-                  <Nav.Item>
+                  <Nav.Item key={idx}>
                     <Nav.Link eventKey={nav.name} onClick={() => setOpen(idx)}>
                       {open == idx ? (
-                        <i class="fa-solid fa-door-open"></i>
+                        <i className="fa-solid fa-door-open"></i>
                       ) : (
-                        <i class="fa-solid fa-door-closed"></i>
+                        <i className="fa-solid fa-door-closed"></i>
                       )}
                     </Nav.Link>
                   </Nav.Item>

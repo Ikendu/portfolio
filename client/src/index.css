@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .displayPics {
   background-image: url("./assets/icons/picPort.jpg");
   /* background-repeat: no-repeat; */
@@ -11,6 +13,20 @@
   height: 400px;
   margin-top: -100px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.displayPics p {
+  max-width: 600px;
+  max-height: 300px;
+  overflow: auto;
+  background-color: #000000ab;
+  padding: 20px;
+  border-radius: 20px;
+  line-height: 25px;
+  word-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 /* :root {
