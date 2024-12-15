@@ -9,6 +9,7 @@ export default function Contact() {
   const initialEntries = {
     name: ``,
     phone: ``,
+    mobile: "",
     email: ``,
     message: ``,
   };
@@ -102,6 +103,15 @@ export default function Contact() {
                     placeholder="Your Phone Number"
                     value={formDetails.phone}
                     onChange={(e) => handleFormChange(`phone`, e.target.value)}
+                  />
+                </Col>
+                <Col sm={6} className="px-1">
+                  <input
+                    required
+                    type="tel"
+                    placeholder="Your Mobile Number"
+                    value={formDetails.phone}
+                    onChange={(e) => handleFormChange(`mobile`, e.target.value)}
                   />
                 </Col>
                 <Col>
