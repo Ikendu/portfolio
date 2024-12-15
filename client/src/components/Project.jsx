@@ -53,7 +53,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  <h3 className="text-3xl m-4">Freelance&nbsp;Works</h3>
+                  <h3 className="text-3xl m-4">Freelance and Personal Works</h3>
                   <Row>
                     {freelanceWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -61,7 +61,7 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
-                  <h3 className="text-3xl m-4">Personal&nbsp;Projects</h3>
+                  <h3 className="text-3xl m-4">Training&nbsp;Projects</h3>
                   <Row>
                     {personalWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />
@@ -69,7 +69,9 @@ export default function Project() {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="fourth">
-                  <h3 className="text-3xl m-4 text-center">Test Projects</h3>
+                  <h3 className="text-3xl m-4 text-center">
+                    Skill Test Projects
+                  </h3>
                   <Row>
                     {testWorks.map((project, idx) => (
                       <CardContents key={idx} {...project} />

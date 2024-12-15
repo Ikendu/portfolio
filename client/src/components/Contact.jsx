@@ -124,8 +124,8 @@ export default function Contact() {
                       handleFormChange(`message`, e.target.value)
                     }
                   />
-                  <button type="submit">
-                    <spn>{buttonText}</spn>
+                  <button type="submit" className="rounded-2xl">
+                    <span>{buttonText}</span>
                   </button>
                 </Col>
                 {status.message && (
