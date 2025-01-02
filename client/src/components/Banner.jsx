@@ -70,8 +70,8 @@ export default function Banner() {
                     Graphics Designer, AI Prompt Engineer.
                   </p>
                   <p>
-                    Any Tech related problem? Always reach out to me. The solution is just a phone
-                    call away
+                    Facing a tech challenge? Don’t hesitate to reach out—your solution is just a
+                    call away!
                   </p>
                   <div className=' flex flex-col gap-2 mt-4'>
                     <span className=''>📧 ndubest56@gmail.com</span>
