@@ -5,10 +5,10 @@ import 'react-multi-carousel/lib/styles.css'
 import colorSharp from '../assets/img/color-sharp.png'
 import { carouselItems, responsive, skillsIcons } from '../data'
 
-const skills = skillsIcons.filter((skill) => skill.id < 4)
-const skillss = skillsIcons.filter((skill) => skill.id > 3 && skill.id < 7)
-const skillsss = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 11)
-const skillssss = skillsIcons.filter((skill) => skill.id > 10 && skill.id < 15)
+const skills = skillsIcons.filter((skill) => skill.id < 5)
+const skillss = skillsIcons.filter((skill) => skill.id > 4 && skill.id < 9)
+const skillsss = skillsIcons.filter((skill) => skill.id > 8 && skill.id < 12)
+const skillssss = skillsIcons.filter((skill) => skill.id > 11 && skill.id < 15)
 
 function SkillSet({ skillSet }) {
   return (
