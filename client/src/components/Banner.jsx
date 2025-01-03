@@ -54,7 +54,7 @@ export default function Banner() {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div className={isVisible ? 'animate__animated animate__fadeIn' : ``}>
+                <div className={isVisible ? 'animate__animated animate__backInLeft' : ``}>
                   <span className='tagline '>Welcome to David Portfolio</span>
                   <h1 className='head text-3xl md:text-5xl'>
                     David Aniede <br />
