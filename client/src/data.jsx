@@ -25,6 +25,7 @@ import react from './assets/icons/react.svg'
 import sass from './assets/icons/sass.svg'
 import css from './assets/icons/css.svg'
 import django from './assets/icons/django.svg'
+import wordpress from './assets/icons/wordpress.svg'
 
 FacebookIcon
 
@@ -80,6 +81,7 @@ export const skillsIcons = [
   { id: 11, name: 'Socket.io', icon: socket },
   { id: 12, name: 'Sass', icon: sass },
   { id: 13, name: 'Django', icon: django },
+  { id: 14, name: 'Wordpress', icon: wordpress },
 ]
 
 export const responsive = {

@@ -7,8 +7,8 @@ import { carouselItems, responsive, skillsIcons } from '../data'
 
 const skills = skillsIcons.filter((skill) => skill.id < 4)
 const skillss = skillsIcons.filter((skill) => skill.id > 3 && skill.id < 7)
-const skillsss = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 10)
-const skillssss = skillsIcons.filter((skill) => skill.id > 9 && skill.id < 14)
+const skillsss = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 11)
+const skillssss = skillsIcons.filter((skill) => skill.id > 10 && skill.id < 15)
 
 function SkillSet({ skillSet }) {
   return (
