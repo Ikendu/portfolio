@@ -12,6 +12,7 @@ import testProject from '../assets/img/testProject.jpg'
 // import image2 from "../assets/img/project-img2.png";
 // import image3 from "../assets/img/project-img3.png";
 import testProject1 from '../assets/img/testProject1.jpg'
+import testProject3 from '../assets/img/testProject3.jpg'
 import prime from '../assets/img/prime.jpg'
 
 // import image3 from "../assets/img/project-img3.png";
