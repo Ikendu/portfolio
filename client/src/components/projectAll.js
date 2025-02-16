@@ -41,7 +41,7 @@ export const teamWorks = [
 export const freelanceWorks = [
   {
     title: `Ejimofor Legal Consults 🎋`,
-    desc: `A comprehensive hub offering free legal services for victims of human rights abuses and indigent individuals, timely updates on breaking legal news and local legislation`,
+    desc: `A comprehensive hub offering free legal services for victims of human rights abuses and indigent individuals with updates on breaking legal news and local legislation`,
     image: prime,
     link: `https://primelegal.com.ng/`,
   },
