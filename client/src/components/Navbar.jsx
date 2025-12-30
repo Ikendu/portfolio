@@ -48,7 +48,7 @@ function NavbarComponent() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto flex items-center ">
+          <Nav className="me-auto flex items-center bg-gray-900 sm:bg-transparent p-3 rounded-md">
             <Nav.Link
               href="#home"
               onClick={() => changeActivelink(`home`)}
@@ -77,7 +77,7 @@ function NavbarComponent() {
               Projects
             </Nav.Link>
           </Nav>
-          <span className="navbar-text">
+          <span className="navbar-text bg-gray-900 sm:bg-transparent pb-6 sm:pb-0">
             <div className="social-icon">
               <a href="https://wa.link/t2k3ug" target="_blank">
                 <img src={whatsapp} alt="nav" />
