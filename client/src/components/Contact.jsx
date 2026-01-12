@@ -1,149 +1,121 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import contactImg from "../assets/img/contact-img.svg";
-import { Col, Container, Row } from "react-bootstrap";
-import TrackVisibility from "react-on-screen";
 
 export default function Contact() {
-  const initialEntries = {
-    name: ``,
-    phone: ``,
-    mobile: "",
-    email: ``,
-    message: ``,
-  };
+  const [formDetails, setFormDetails] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [buttonText, setButtonText] = useState("Send Message");
+  const [status, setStatus] = useState({ message: "", success: false });
 
-  const [formDetails, setFormDetails] = useState(initialEntries);
-  const [buttonText, setButtonText] = useState(`Send`);
-  const [status, setStatus] = useState({});
-
-  const handleFormChange = (field, value) => {
+  const handleChange = (field, value) => {
     setFormDetails({ ...formDetails, [field]: value });
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setButtonText(`Sending`);
+    setButtonText("Sending...");
+
     emailjs
       .send("service_2yry7mf", "template_flz454q", formDetails, {
         publicKey: "iPQWPyYdO6yD4VgQA",
       })
       .then(
         (response) => {
-          console.log("SUCCESS!", response);
-          setButtonText("Send");
-          setFormDetails(initialEntries);
+          setStatus({ message: "Message sent successfully!", success: true });
+          setFormDetails({ name: "", email: "", phone: "", message: "" });
+          setButtonText("Send Message");
+          setTimeout(() => setStatus({ message: "", success: false }), 5000);
         },
         (err) => {
-          console.log("FAILED...", err);
+          setStatus({
+            message: "Failed to send message. Try again.",
+            success: false,
+          });
+          setButtonText("Send Message");
         }
       );
-
-    // let response = await fetch(`http://localhost:5000/contact`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "Application/json",
-    //   },
-    //   body: JSON.stringify(formDetails),
-    // });
-    // setButtonText(`Send`);
-    // let result = response.json();
-    // setFormDetails(initialEntries);
-    // if (result.code === 200) {
-    //   setStatus({ success: true, message: `Message sent successfully` });
-    // } else {
-    //   setStatus({ success: false, message: `there was an error, try again ` });
-    // }
   };
-  return (
-    <section className="contact" id="contact">
-      <Container>
-        <Row className={`align-items-center`}>
-          <Col md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ``
-                  }
-                >
-                  <img src={contactImg} alt="Contact Us" />
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-          <Col md={6}>
-            <h2>Get in touch</h2>
-            <form onSubmit={handleFormSubmit}>
-              <Row>
-                <Col sm={6} className="px-1">
-                  <input
-                    required
-                    type="text"
-                    placeholder="Frist Name"
-                    value={formDetails.name}
-                    onChange={(e) => handleFormChange(`name`, e.target.value)}
-                  />
-                </Col>
 
-                <Col sm={6} className="px-1">
-                  <input
-                    required
-                    type="email"
-                    placeholder="Your Email"
-                    value={formDetails.email}
-                    onChange={(e) => handleFormChange(`email`, e.target.value)}
-                  />
-                </Col>
-                <Col sm={6} className="px-1">
-                  <input
-                    required
-                    type="tel"
-                    placeholder="Your Phone Number"
-                    value={formDetails.phone}
-                    onChange={(e) => handleFormChange(`phone`, e.target.value)}
-                  />
-                </Col>
-                <Col sm={6} className="px-1">
-                  <input
-                    required
-                    type="tel"
-                    placeholder="Your Mobile Number"
-                    value={formDetails.phone}
-                    onChange={(e) => handleFormChange(`mobile`, e.target.value)}
-                  />
-                </Col>
-                <Col>
-                  <textarea
-                    required
-                    rows={6}
-                    placeholder="Your Message"
-                    value={formDetails.message}
-                    onChange={(e) =>
-                      handleFormChange(`message`, e.target.value)
-                    }
-                  />
-                  <button type="submit" className="rounded-2xl">
-                    <span>{buttonText}</span>
-                  </button>
-                </Col>
-                {status.message && (
-                  <Col>
-                    <p
-                      className={
-                        status.success === false ? `danger` : `success`
-                      }
-                    >
-                      {status.message}
-                    </p>
-                  </Col>
-                )}
-              </Row>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+  return (
+    <section className="py-20 bg-slate-800" id="contact">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Let'"'"'s talk about your next project
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="hidden md:flex items-center justify-center">
+            <img src={contactImg} alt="Contact" className="max-w-sm" />
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                required
+                value={formDetails.name}
+                onChange={(e) => handleChange("name", e.target.value)}
+                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                value={formDetails.email}
+                onChange={(e) => handleChange("email", e.target.value)}
+                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+              />
+            </div>
+
+            <input
+              type="tel"
+              placeholder="Your Phone Number"
+              value={formDetails.phone}
+              onChange={(e) => handleChange("phone", e.target.value)}
+              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+            />
+
+            <textarea
+              rows="6"
+              placeholder="Your Message"
+              required
+              value={formDetails.message}
+              onChange={(e) => handleChange("message", e.target.value)}
+              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition resize-none"
+            />
+
+            <button
+              type="submit"
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              {buttonText}
+            </button>
+
+            {status.message && (
+              <div
+                className={`p-4 rounded-lg ${
+                  status.success
+                    ? "bg-green-500/20 text-green-300 border border-green-500/50"
+                    : "bg-red-500/20 text-red-300 border border-red-500/50"
+                }`}
+              >
+                {status.message}
+              </div>
+            )}
+          </form>
+        </div>
+      </div>
     </section>
   );
 }

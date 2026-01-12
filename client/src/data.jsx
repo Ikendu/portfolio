@@ -1,92 +1,59 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import { Facebook, Twitter } from 'react-bootstrap-icons'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
-import meter55 from './assets/meter/meter55.png'
-import meter65 from './assets/meter/meter65.png'
-import meter75 from './assets/meter/meter75.png'
-import meter80 from './assets/meter/meter80.png'
-import meter85 from './assets/meter/meter85.png'
-import meter90 from './assets/meter/meter90.png'
-import meter95 from './assets/meter/meter95.png'
-import colorSharp from './assets/img/color-sharp.png'
-import nextjsIcon from './assets/icons/nextjsIcon.svg'
-import tailwind from './assets/icons/Tailwind.svg'
-import diamondIcon from './assets/icons/diamond.svg'
-import nodejs from './assets/icons/nodejs.svg'
-import mongodb from './assets/icons/mongodb.svg'
-import FacebookIcon from './assets/icons/FacebookIcon'
-import bootstrap from './assets/icons/bootstrap.svg'
-import express from './assets/icons/express.svg'
-import html from './assets/icons/html.svg'
-import web from './assets/icons/express.svg'
-import socket from './assets/icons/socket.svg'
-import react from './assets/icons/react.svg'
-import sass from './assets/icons/sass.svg'
-import css from './assets/icons/css.svg'
-import django from './assets/icons/django.svg'
-import wordpress from './assets/icons/wordpress.svg'
+import meter95 from "./assets/meter/meter95.png";
+import meter85 from "./assets/meter/meter85.png";
+import meter90 from "./assets/meter/meter90.png";
+import meter80 from "./assets/meter/meter80.png";
+import meter75 from "./assets/meter/meter75.png";
+import meter65 from "./assets/meter/meter65.png";
+import meter55 from "./assets/meter/meter55.png";
 
-FacebookIcon
+import nextjsIcon from "./assets/icons/nextjsIcon.svg";
+import tailwind from "./assets/icons/Tailwind.svg";
+import nodejs from "./assets/icons/nodejs.svg";
+import mongodb from "./assets/icons/mongodb.svg";
+import bootstrap from "./assets/icons/bootstrap.svg";
+import express from "./assets/icons/express.svg";
+import html from "./assets/icons/html.svg";
+import socket from "./assets/icons/socket.svg";
+import react from "./assets/icons/react.svg";
+import sass from "./assets/icons/sass.svg";
+import css from "./assets/icons/css.svg";
 
+// Proficiency meter items for carousel
 export const carouselItems = [
-  {
-    image: meter95,
-    text: `React.js`,
-  },
-  {
-    image: meter85,
-    text: `Vanilla JavaScript`,
-  },
-  {
-    image: meter90,
-    text: `Tailwind CSS`,
-  },
-  {
-    image: meter80,
-    text: `HTML & CSS`,
-  },
-  {
-    image: meter55,
-    text: `Django`,
-  },
-  {
-    image: meter75,
-    text: `Nodejs and MongoDB`,
-  },
-  {
-    image: meter65,
-    text: `Sass`,
-  },
-  {
-    image: meter55,
-    text: `Typescript`,
-  },
-  {
-    image: meter75,
-    text: `Express`,
-  },
-]
-export const skillsIcons = [
-  { id: 1, name: 'Reactjs', icon: react },
-  { id: 2, name: 'Nextjs', icon: nextjsIcon },
-  { id: 3, name: 'HTML', icon: html },
-  { id: 4, name: 'Tailwind', icon: tailwind },
-  { id: 5, name: 'Bootstrap', icon: bootstrap },
-  { id: 6, name: 'CSS', icon: css },
-  { id: 7, name: 'Nodejs', icon: nodejs },
-  { id: 8, name: 'MongoDB', icon: mongodb },
-  { id: 9, name: 'Express', icon: express },
-  { id: 10, name: 'Web RTC', icon: web },
-  { id: 11, name: 'Socket.io', icon: socket },
-  { id: 12, name: 'Sass', icon: sass },
-  { id: 13, name: 'Django', icon: django },
-  { id: 14, name: 'Wordpress', icon: wordpress },
-]
+  { image: meter95, text: "React.js" },
+  { image: meter90, text: "JavaScript" },
+  { image: meter90, text: "Tailwind CSS" },
+  { image: meter85, text: "HTML & CSS" },
+  { image: meter85, text: "Node.js" },
+  { image: meter80, text: "MongoDB" },
+  { image: meter75, text: "Express" },
+  { image: meter75, text: "TypeScript" },
+  { image: meter75, text: "Next.js" },
+];
 
+// Skills with icons - prioritized for full-stack React developer
+export const skillsIcons = [
+  // Frontend Stack
+  { id: 1, name: "React", icon: react },
+  { id: 2, name: "JavaScript", icon: react }, // Using react icon as placeholder
+  { id: 3, name: "HTML5", icon: html },
+  { id: 4, name: "Tailwind CSS", icon: tailwind },
+  { id: 5, name: "CSS3", icon: css },
+  { id: 6, name: "Next.js", icon: nextjsIcon },
+
+  // Backend Stack
+  { id: 7, name: "Node.js", icon: nodejs },
+  { id: 8, name: "MongoDB", icon: mongodb },
+  { id: 9, name: "Express", icon: express },
+  { id: 10, name: "Socket.io", icon: socket },
+  { id: 11, name: "TypeScript", icon: react },
+  { id: 12, name: "Bootstrap", icon: bootstrap },
+  { id: 13, name: "Sass", icon: sass },
+];
+
+// Responsive carousel settings
 export const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -102,27 +69,4 @@ export const responsive = {
     breakpoint: { max: 464, min: 0 },
     items: 1,
   },
-}
-
-export const navItems = [
-  {
-    id: 1,
-    name: 'first',
-    icon: '.',
-  },
-  {
-    id: 2,
-    name: 'second',
-    icon: '.',
-  },
-  {
-    id: 3,
-    name: 'third',
-    icon: '.',
-  },
-  {
-    id: 4,
-    name: 'fourth',
-    icon: '.',
-  },
-]
+};

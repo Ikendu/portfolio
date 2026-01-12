@@ -1,89 +1,60 @@
-import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
-import CardContents from "./CardContents";
-import imageRigh from "../assets/img/color-sharp2.png";
-
-import {
-  freelanceWorks,
-  personalWorks,
-  teamWorks,
-  testWorks,
-} from "./projectAll";
-import { navItems } from "../data";
 import { useState } from "react";
+import CardContents from "./CardContents";
+import { freelanceWorks, personalWorks, teamWorks } from "./projectAll";
+
+const projectCategories = [
+  { id: "featured", label: "Featured Works", projects: freelanceWorks },
+  { id: "team", label: "Team Projects", projects: teamWorks },
+  { id: "learning", label: "Learning Projects", projects: personalWorks },
+];
 
 export default function Project() {
-  const [open, setOpen] = useState(null);
+  const [activeTab, setActiveTab] = useState("featured");
+  const currentProjects =
+    projectCategories.find((cat) => cat.id === activeTab)?.projects || [];
 
   return (
-    <section className="project" id="projects">
-      <Container>
-        <Row>
-          <Col>
-            <h2>Projecsts</h2>
-            <p>
-              Projects I have worked on in the course of my career are divided
-              into tabs as seen below. Each tab contains different projects in
-              that category
-            </p>
-            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-              <Nav
-                variant="pills"
-                className="flex-row  nav-pills justify-center mb-5 items-center"
-                id="pills-tab"
-              >
-                {navItems.map((nav, idx) => (
-                  <Nav.Item key={idx}>
-                    <Nav.Link eventKey={nav.name} onClick={() => setOpen(idx)}>
-                      {open == idx ? (
-                        <i className="fa-solid fa-door-open"></i>
-                      ) : (
-                        <i className="fa-solid fa-door-closed"></i>
-                      )}
-                    </Nav.Link>
-                  </Nav.Item>
-                ))}
-              </Nav>
-              <Tab.Content>
-                <Tab.Pane eventKey="first">
-                  <h3 className="text-3xl m-4">Team Works</h3>
-                  <Row>
-                    {teamWorks.map((project, idx) => (
-                      <CardContents key={idx} {...project} />
-                    ))}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                  <h3 className="text-3xl m-4">Freelance and Personal Works</h3>
-                  <Row>
-                    {freelanceWorks.map((project, idx) => (
-                      <CardContents key={idx} {...project} />
-                    ))}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                  <h3 className="text-3xl m-4">Training&nbsp;Projects</h3>
-                  <Row>
-                    {personalWorks.map((project, idx) => (
-                      <CardContents key={idx} {...project} />
-                    ))}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fourth">
-                  <h3 className="text-3xl m-4 text-center">
-                    Skill Test Projects
-                  </h3>
-                  <Row>
-                    {testWorks.map((project, idx) => (
-                      <CardContents key={idx} {...project} />
-                    ))}
-                  </Row>
-                </Tab.Pane>
-              </Tab.Content>
-            </Tab.Container>
-          </Col>
-        </Row>
-      </Container>
-      <img src={imageRigh} alt="" className="background-image-right" />
+    <section className="py-20 bg-slate-900" id="projects">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Projects
+          </h2>
+          <p className="text-gray-400 text-lg">
+            A selection of my work across different types of projects
+          </p>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {projectCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveTab(category.id)}
+              className={`px-6 py-2 rounded-lg font-semibold transition-all ${
+                activeTab === category.id
+                  ? "bg-cyan-500 text-white"
+                  : "bg-slate-800 text-gray-300 hover:bg-slate-700"
+              }`}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentProjects.map((project, idx) => (
+            <CardContents key={idx} {...project} />
+          ))}
+        </div>
+
+        {currentProjects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-400">No projects in this category yet.</p>
+          </div>
+        )}
+      </div>
     </section>
   );
 }

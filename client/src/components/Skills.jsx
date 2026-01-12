@@ -1,80 +1,69 @@
-import { Col, Container, Row } from 'react-bootstrap'
-import { Facebook, Twitter } from 'react-bootstrap-icons'
+import { useEffect } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import colorSharp from '../assets/img/color-sharp.png'
-import { carouselItems, responsive, skillsIcons } from '../data'
+import { carouselItems, skillsIcons } from '../data'
 
-const skills = skillsIcons.filter((skill) => skill.id < 5)
-const skillss = skillsIcons.filter((skill) => skill.id > 4 && skill.id < 9)
-const skillsss = skillsIcons.filter((skill) => skill.id > 8 && skill.id < 12)
-const skillssss = skillsIcons.filter((skill) => skill.id > 11 && skill.id < 15)
+const frontendSkills = skillsIcons.filter((skill) => skill.id < 7)
+const backendSkills = skillsIcons.filter((skill) => skill.id > 6 && skill.id < 10)
 
-function SkillSet({ skillSet }) {
+function SkillGrid({ skills, title }) {
   return (
-    <ul>
-      {skillSet.map((skill, idx) => (
-        <li key={idx} className='flex gap-2 my-2'>
-          <img src={skill.icon} className=' bg-white rounded-full w-5' />
-          <span>{skill.name} </span>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h3 className='text-xl md:text-2xl font-semibold text-cyan-400 mb-4'>{title}</h3>
+      <ul className='flex flex-wrap gap-6'>
+        {skills.map((skill, idx) => (
+          <li key={idx} className='flex items-center gap-3 bg-slate-800/50 px-4 py-3 rounded-lg hover:bg-slate-700/50 transition'>
+            <img src={skill.icon} alt={skill.name} className='w-8 h-8 bg-white rounded-full p-1' />
+            <span className='text-gray-300'>{skill.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
 export default function Skills() {
   return (
-    <section className='skill' id='skills'>
-      <Container>
-        <Row>
-          <Col>
-            <div
-              className={`skill-bx p-3 py-5 flex flex-column align-items-center gap-3 md:gap-20`}
-            >
-              <h2>Skills</h2>
-              <div className=''>
-                <div className=''>
-                  <b className='text-2xl text-lime-300'>LIBRARIES/FRAMEWORKS:</b>
-                  <br />
-                  <div className='flex my-4'>
-                    <div className='flex gap-5 flex-wrap mx-4 justify-content-between md:w-[750px]'>
-                      <SkillSet skillSet={skills} />
-                      <SkillSet skillSet={skillss} />
-                      <SkillSet skillSet={skillsss} />
-                      <SkillSet skillSet={skillssss} />
-                    </div>
-                    <div className='flex gap-20'></div>
-                  </div>
-                </div>
+    <section className='py-20 bg-slate-900' id='skills'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='text-center mb-12'>
+          <h2 className='text-4xl md:text-5xl font-bold text-white mb-4'>Skills & Expertise</h2>
+          <p className='text-gray-400 text-lg'>Technologies and tools I work with</p>
+        </div>
 
-                <p className='flex flex-column gap-3 my-5'>
-                  <b className='text-[1.3rem] text-lime-300'>PROGRAMMING LANGUAGES:</b>
-                  <span className=' text-2xl'>
-                    JavaScript, Java, Typescript, Ruby, PHP, C, Python
-                  </span>
-                </p>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16'>
+          <SkillGrid skills={frontendSkills} title='Frontend Stack' />
+          <SkillGrid skills={backendSkills} title='Backend & Tools' />
+        </div>
 
-                <p className='flex flex-column gap-3'>
-                  <span className='text-2xl text-lime-300 '>OTHER SKILLS:</span>
-                  Computer Software/OS Maintenance, Graphics Design, ICT Personnel
-                </p>
+        <div className='mb-12'>
+          <h3 className='text-2xl font-semibold text-cyan-400 mb-4'>Languages</h3>
+          <div className='flex flex-wrap gap-3'>
+            {['JavaScript', 'TypeScript', 'Java', 'Python', 'Ruby', 'PHP', 'C'].map((lang) => (
+              <span key={lang} className='bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-lg font-medium'>
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className='text-2xl font-semibold text-cyan-400 mb-6'>Proficiency Levels</h3>
+          <Carousel responsive={{
+            superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 5 },
+            desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+            tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
+            mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
+          }} infinite className=''>
+            {carouselItems.map((item, idx) => (
+              <div key={idx} className='flex flex-col items-center p-4'>
+                <img src={item.image} alt={item.text} className='mb-3' />
+                <h5 className='text-center text-gray-300 font-medium'>{item.text}</h5>
               </div>
-              <h2 className='tool-set'>Tool-Set and Proficiency level</h2>
-              <Carousel responsive={responsive} infinite={true} className='skill-slider'>
-                {carouselItems.map((item, idx) => (
-                  <div key={idx} className='item'>
-                    <img src={item.image} />
-                    {/* <div className="img ">{item.image}</div> */}
-                    <h5>{item.text}</h5>
-                  </div>
-                ))}
-              </Carousel>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      <img src={colorSharp} className='background-image-left' />
+            ))}
+          </Carousel>
+        </div>
+      </div>
     </section>
   )
 }

@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/icons/logoImage.png";
 import linkedin from "../assets/img/0linkedin.svg";
 import facebook from "../assets/img/0facebook.svg";
@@ -9,105 +6,168 @@ import instagram from "../assets/img/0instagram.svg";
 import whatsapp from "../assets/img/0whatsapp.svg";
 import twitter from "../assets/img/0twitter.svg";
 import github from "../assets/img/0github.svg";
-import TrackVisibility from "react-on-screen";
 
 function NavbarComponent() {
-  const [activeLink, setActiveLink] = useState(`home`);
+  const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) setScrolled(true);
-      else setScrolled(false);
+      setScrolled(window.scrollY > 50);
     };
-    addEventListener(`scroll`, onScroll);
-    return () => removeEventListener(`scroll`, onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const changeActivelink = (link) => {
-    setActiveLink(link);
-  };
+  const navLinks = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  const socials = [
+    { url: "https://wa.link/t2k3ug", icon: whatsapp, label: "WhatsApp" },
+    {
+      url: "https://linkedin.com/in/aniede",
+      icon: linkedin,
+      label: "LinkedIn",
+    },
+    {
+      url: "https://www.facebook.com/chibundu101/",
+      icon: facebook,
+      label: "Facebook",
+    },
+    { url: "https://twitter.com/ikendul", icon: twitter, label: "Twitter" },
+    { url: "http://github.com/ikendu", icon: github, label: "GitHub" },
+    {
+      url: "https://www.instagram.com/chibundu.aniede",
+      icon: instagram,
+      label: "Instagram",
+    },
+  ];
 
   return (
-    <Navbar expand="lg" className={scrolled ? `scrolled` : ``}>
-      <Container>
-        <Navbar.Brand href="#home">
-          <TrackVisibility>
-            {({ isVisible }) => (
-              <div
-                className={isVisible ? "animate__animated animate__zoomIn" : ``}
-              >
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="rounded-full max-w-[50px] border-3"
-                />
-              </div>
-            )}
-          </TrackVisibility>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto flex items-center bg-gray-900 sm:bg-transparent p-3 rounded-md">
-            <Nav.Link
-              href="#home"
-              onClick={() => changeActivelink(`home`)}
-              className={
-                activeLink === `home` ? `active navbar-link` : `navber-link`
-              }
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#skills"
-              onClick={() => changeActivelink(`skills`)}
-              className={
-                activeLink === `skills` ? `active navbar-link` : `navber-link`
-              }
-            >
-              Skills
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              onClick={() => changeActivelink(`projects`)}
-              className={
-                activeLink == `projects` ? `active navbar-link` : `navber-link`
-              }
-            >
-              Projects
-            </Nav.Link>
-          </Nav>
-          <span className="navbar-text bg-gray-900 sm:bg-transparent pb-6 sm:pb-0">
-            <div className="social-icon">
-              <a href="https://wa.link/t2k3ug" target="_blank">
-                <img src={whatsapp} alt="nav" />
-              </a>
-              <a href="https://linkedin.com/in/aniede" target="_blank">
-                <img src={linkedin} alt="nav" />
-              </a>
-              <a href="https://www.facebook.com/chibundu101/" target="_blank">
-                <img src={facebook} alt="nav" />
-              </a>
-              <a href="https://twitter.com/ikendul" target="_blank">
-                <img src={twitter} alt="nav" />
-              </a>
-              <a href="http://github.com/ikendu" target="_blank">
-                <img src={github} alt="nav" />
-              </a>
-              <a
-                href="https://www.instagram.com/chibundu.aniede"
-                target="_blank"
-              >
-                <img src={instagram} alt="nav" />
-              </a>
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-slate-950 shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="flex-shrink-0 hover:scale-105 transition-transform"
+          >
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-12 h-12 rounded-full border-2 border-cyan-400"
+            />
+          </a>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  onClick={() => setActiveLink(link.id)}
+                  className={`transition-colors font-medium ${
+                    activeLink === link.id
+                      ? "text-cyan-400 border-b-2 border-cyan-400 pb-1"
+                      : "text-gray-300 hover:text-cyan-300"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
-            {/* <button onClick={() => console.log(`Connect`)} className="">
-              Let's connect
-            </button> */}
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </div>
+
+          {/* Desktop Social Icons */}
+          <div className="hidden md:flex gap-4">
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+              >
+                <img src={social.icon} alt={social.label} className="w-6 h-6" />
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-gray-300 hover:text-cyan-400"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-slate-900 py-4 border-t border-slate-700">
+            <div className="flex flex-col gap-3 mb-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  onClick={() => {
+                    setActiveLink(link.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`px-4 py-2 rounded transition-colors ${
+                    activeLink === link.id
+                      ? "bg-cyan-500/20 text-cyan-400"
+                      : "text-gray-300 hover:text-cyan-300"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="flex gap-3 px-4 flex-wrap">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
+                  <img
+                    src={social.icon}
+                    alt={social.label}
+                    className="w-5 h-5"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 }
 
