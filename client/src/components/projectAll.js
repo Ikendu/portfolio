@@ -79,6 +79,13 @@ export const freelanceWorks = [
     image: freelance,
     link: `https://gifthairs.netlify.app`,
   },
+  {
+    title: `David Portfolio 💼`,
+    desc: `List and Description of all past and present design and implentation activities`,
+    tools: "React, Vite, Tailwind CSS, PHP, MySQL, PHPMailer",
+    image: proFile,
+    link: `https://davidaniede.vercel.app/`,
+  },
 ];
 
 export const personalWorks = [
@@ -95,13 +102,6 @@ export const personalWorks = [
     tools: "React, Vite, Tailwind CSS",
     image: proMovies,
     link: `https://nemovies.netlify.app/`,
-  },
-  {
-    title: `David Portfolio 💼`,
-    desc: `List and Description of all past and present design and implentation activities`,
-    tools: "React, Vite, Tailwind CSS",
-    image: proFile,
-    link: `https://davidaniede.vercel.app/`,
   },
 ];
 

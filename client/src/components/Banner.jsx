@@ -1,6 +1,7 @@
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import bannerImage from "../assets/img/landingImg1.png";
 import { useEffect, useState } from "react";
+import passport from "../assets/img/passport.jpg";
 
 export default function Banner() {
   const [focusText, setFocusText] = useState("");
@@ -128,7 +129,7 @@ export default function Banner() {
 
           <div className="hidden md:flex justify-center">
             <img
-              src={bannerImage}
+              src={passport}
               alt="Banner"
               className="max-w-md w-full object-cover rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300"
             />
