@@ -51,15 +51,27 @@ export default function Banner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-white space-y-6">
-            <p className="text-cyan-400 text-lg font-semibold">
-              Welcome to My Portfolio
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold">
-              David Aniede <br />
-            </h1>
-            <h4>
-              Full-Stack Software Engineer | Frontend Major(Reactjs/JavaScript)
-            </h4>
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <p className="text-cyan-400 text-lg font-semibold">
+                Welcome to My Portfolio
+              </p>
+
+              <h1 className="text-4xl md:text-6xl font-bold">
+                David Aniede <br />
+              </h1>
+              <div className=" md:hidden flex justify-center">
+                <img
+                  src={passport}
+                  alt="Profile Picture"
+                  className="rounded-full max-h-56 max-w-56 object-fi"
+                />
+              </div>
+
+              <h4 className="text-center md:text-start">
+                Full-Stack Software Engineer | Frontend
+                Major(Reactjs/JavaScript)
+              </h4>
+            </div>
             <h3
               className="text-cyan-400 min-h-[1.4em] text-3xl font-semibold"
               title="Full-Stack Developer, React Specialist"

@@ -7,7 +7,6 @@ import oculusFront from "../assets/img/oculusFront.jpg";
 // import freelance1 from "../assets/img/project-freelance1.jpg";
 import procalc from "../assets/img/project-personal10.jpg";
 import proMovies from "../assets/img/project-personal1.jpg";
-import proFile from "../assets/img/project-personal.jpg";
 import testProject from "../assets/img/testProject.jpg";
 // import image2 from "../assets/img/project-img2.png";
 // import image3 from "../assets/img/project-img3.png";
@@ -15,6 +14,7 @@ import testProject1 from "../assets/img/testProject1.jpg";
 import testProject3 from "../assets/img/testProject3.jpg";
 import prime from "../assets/img/prime.jpg";
 import lodge from "../assets/img/lodge.jpg";
+import proFile from "../assets/img/portfolio.jpg";
 
 // import image3 from "../assets/img/project-img3.png";
 

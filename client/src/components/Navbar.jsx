@@ -6,7 +6,7 @@ import instagram from "../assets/img/0instagram.svg";
 import whatsapp from "../assets/img/0whatsapp.svg";
 import twitter from "../assets/img/0twitter.svg";
 import github from "../assets/img/0github.svg";
-
+import passportIcon from "../assets/img/passportIcon.jpg";
 function NavbarComponent() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -58,14 +58,11 @@ function NavbarComponent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a
-            href="#home"
-            className="flex-shrink-0 hover:scale-105 transition-transform"
-          >
+          <a href="#home" className="hover:scale-105 transition-transform">
             <img
-              src={logo}
+              src={passportIcon}
               alt="Logo"
-              className="w-12 h-12 rounded-full border-2 border-cyan-400"
+              className="h-12 rounded-full border-2 border-cyan-400"
             />
           </a>
 

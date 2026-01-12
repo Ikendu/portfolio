@@ -49,7 +49,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-gray-400 text-lg">
-            Let'"'"'s talk about your next project
+            Let's talk about your next project
           </p>
         </div>
 
