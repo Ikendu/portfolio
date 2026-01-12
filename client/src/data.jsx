@@ -17,6 +17,8 @@ import socket from "./assets/icons/socket.svg";
 import react from "./assets/icons/react.svg";
 import sass from "./assets/icons/sass.svg";
 import css from "./assets/icons/css.svg";
+import phpIcon from "./assets/icons/phpIcon.png";
+import mysqlIcon from "./assets/icons/mysqlIcon.png";
 
 // Proficiency meter items for carousel
 export const carouselItems = [
@@ -40,15 +42,17 @@ export const skillsIcons = [
   { id: 4, name: "Tailwind CSS", icon: tailwind },
   { id: 5, name: "CSS3", icon: css },
   { id: 6, name: "Next.js", icon: nextjsIcon },
+  { id: 7, name: "TypeScript", icon: react },
+  { id: 8, name: "Bootstrap", icon: bootstrap },
 
   // Backend Stack
-  { id: 7, name: "Node.js", icon: nodejs },
-  { id: 8, name: "MongoDB", icon: mongodb },
-  { id: 9, name: "Express", icon: express },
-  { id: 10, name: "Socket.io", icon: socket },
-  { id: 11, name: "TypeScript", icon: react },
-  { id: 12, name: "Bootstrap", icon: bootstrap },
-  { id: 13, name: "Sass", icon: sass },
+  { id: 9, name: "Node.js", icon: nodejs },
+  { id: 10, name: "MongoDB", icon: mongodb },
+  { id: 11, name: "Express", icon: express },
+  { id: 12, name: "PHP", icon: phpIcon },
+  { id: 13, name: "MySQL", icon: mysqlIcon },
+  { id: 14, name: "Socket.io", icon: socket },
+  { id: 15, name: "Sass", icon: sass },
 ];
 
 // Responsive carousel settings

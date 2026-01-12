@@ -1,19 +1,19 @@
-import team from '../assets/img/project-team.jpg'
-import team1 from '../assets/img/project-team1.jpg'
-import team2 from '../assets/img/project-team2.jpg'
-import freelance from '../assets/img/project-freelance.jpg'
-import decofront from '../assets/img/decofront.jpg'
-import oculusFront from '../assets/img/oculusFront.jpg'
+import team from "../assets/img/project-team.jpg";
+import team1 from "../assets/img/project-team1.jpg";
+import team2 from "../assets/img/project-team2.jpg";
+import freelance from "../assets/img/project-freelance.jpg";
+import decofront from "../assets/img/decofront.jpg";
+import oculusFront from "../assets/img/oculusFront.jpg";
 // import freelance1 from "../assets/img/project-freelance1.jpg";
-import procalc from '../assets/img/project-personal10.jpg'
-import proMovies from '../assets/img/project-personal1.jpg'
-import proFile from '../assets/img/project-personal.jpg'
-import testProject from '../assets/img/testProject.jpg'
+import procalc from "../assets/img/project-personal10.jpg";
+import proMovies from "../assets/img/project-personal1.jpg";
+import proFile from "../assets/img/project-personal.jpg";
+import testProject from "../assets/img/testProject.jpg";
 // import image2 from "../assets/img/project-img2.png";
 // import image3 from "../assets/img/project-img3.png";
-import testProject1 from '../assets/img/testProject1.jpg'
-import testProject3 from '../assets/img/testProject3.jpg'
-import prime from '../assets/img/prime.jpg'
+import testProject1 from "../assets/img/testProject1.jpg";
+import testProject3 from "../assets/img/testProject3.jpg";
+import prime from "../assets/img/prime.jpg";
 
 // import image3 from "../assets/img/project-img3.png";
 
@@ -36,7 +36,7 @@ export const teamWorks = [
     image: team2,
     link: `https://bulloakltd.com/`,
   },
-]
+];
 
 export const freelanceWorks = [
   {
@@ -63,7 +63,7 @@ export const freelanceWorks = [
     image: freelance,
     link: `https://gifthairs.netlify.app`,
   },
-]
+];
 
 export const personalWorks = [
   {
@@ -84,7 +84,7 @@ export const personalWorks = [
     image: proFile,
     link: `https://davidaniede.vercel.app/`,
   },
-]
+];
 
 export const testWorks = [
   {
@@ -105,4 +105,4 @@ export const testWorks = [
     image: testProject3,
     link: `https://peerjs-call.vercel.app/`,
   },
-]
+];
