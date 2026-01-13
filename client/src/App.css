@@ -648,6 +648,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 26%;
 }
 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .footer p {
   font-weight: 400;
