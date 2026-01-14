@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import contactImg from "../assets/img/contact-img.svg";
 
 export default function Contact() {
@@ -11,6 +10,7 @@ export default function Contact() {
   });
   const [buttonText, setButtonText] = useState("Send Message");
   const [status, setStatus] = useState({ message: "", success: false });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (field, value) => {
     setFormDetails({ ...formDetails, [field]: value });
@@ -19,26 +19,47 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
+    setLoading(true);
 
-    emailjs
-      .send("service_2yry7mf", "template_flz454q", formDetails, {
-        publicKey: "iPQWPyYdO6yD4VgQA",
-      })
-      .then(
-        (response) => {
-          setStatus({ message: "Message sent successfully!", success: true });
-          setFormDetails({ name: "", email: "", phone: "", message: "" });
-          setButtonText("Send Message");
-          setTimeout(() => setStatus({ message: "", success: false }), 5000);
-        },
-        (err) => {
-          setStatus({
-            message: "Failed to send message. Try again.",
-            success: false,
-          });
-          setButtonText("Send Message");
+    try {
+      const response = await fetch(
+        "https://portfolio.morelinks.com.ng/api/submit-contact.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formDetails),
         }
       );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus({
+          message: "Message sent successfully! I'll get back to you soon.",
+          success: true,
+        });
+        setFormDetails({ name: "", email: "", phone: "", message: "" });
+        setButtonText("Send Message");
+        setTimeout(() => setStatus({ message: "", success: false }), 5000);
+      } else {
+        setStatus({
+          message: data.message || "Failed to send message. Please try again.",
+          success: false,
+        });
+        setButtonText("Send Message");
+      }
+    } catch (error) {
+      setStatus({
+        message: "Error sending message. Please try again later.",
+        success: false,
+      });
+      setButtonText("Send Message");
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,7 +87,8 @@ export default function Contact() {
                 required
                 value={formDetails.name}
                 onChange={(e) => handleChange("name", e.target.value)}
-                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+                disabled={loading}
+                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition disabled:opacity-50"
               />
               <input
                 type="email"
@@ -74,7 +96,8 @@ export default function Contact() {
                 required
                 value={formDetails.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+                disabled={loading}
+                className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition disabled:opacity-50"
               />
             </div>
 
@@ -83,7 +106,8 @@ export default function Contact() {
               placeholder="Your Phone Number"
               value={formDetails.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
-              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+              disabled={loading}
+              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition disabled:opacity-50"
             />
 
             <textarea
@@ -92,12 +116,14 @@ export default function Contact() {
               required
               value={formDetails.message}
               onChange={(e) => handleChange("message", e.target.value)}
-              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition resize-none"
+              disabled={loading}
+              className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition resize-none disabled:opacity-50"
             />
 
             <button
               type="submit"
-              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+              disabled={loading}
+              className="w-full bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 disabled:cursor-not-allowed"
             >
               {buttonText}
             </button>

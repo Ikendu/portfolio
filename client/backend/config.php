@@ -6,6 +6,8 @@ define('DB_PASSWORD', '96521Aa@!@!@!');
 define('DB_NAME', 'morelink_portfolio');
 define('DB_PORT', 3306);
 
+define('SMTP_PASSWORD', '9652Aa@!@!@!@');
+
 // Set response headers
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -73,7 +75,7 @@ function uploadImage($file) {
         return [
             'success' => true,
             'path' => 'uploads/testimonials/' . $unique_name,
-            'url' => 'https://portfolio.morelinks.com.ng/api/uploads/testimonials/' . $unique_name
+            'url' => 'https://portfolio.morelinks.com.ng/uploads/testimonials/' . $unique_name
         ];
     } else {
         return ['success' => false, 'message' => 'Failed to upload file.'];
@@ -85,6 +87,6 @@ function getFileUrl($relative_path) {
     if (empty($relative_path)) {
         return null;
     }
-    return 'https://portfolio.morelinks.com.ng/api/' . $relative_path;
+    return 'https://portfolio.morelinks.com.ng/' . $relative_path;
 }
 ?>

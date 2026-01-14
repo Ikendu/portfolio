@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
 import logo from "../assets/icons/logoImage.png";
 import linkedin from "../assets/img/0linkedin.svg";
 import facebook from "../assets/img/0facebook.svg";
@@ -84,30 +85,30 @@ export default function Footer() {
             >
               Home
             </Link>
-            <Link
+            <ScrollLink
               to="/#about"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               About
-            </Link>
-            <Link
+            </ScrollLink>
+            <ScrollLink
               to="/#skills"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Skills
-            </Link>
-            <Link
+            </ScrollLink>
+            <ScrollLink
               to="/#projects"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Projects
-            </Link>
-            <Link
+            </ScrollLink>
+            <ScrollLink
               to="/#contact"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Contact
-            </Link>
+            </ScrollLink>
             <span className="text-gray-400 hover:text-cyan-400 transition cursor-pointer">
               Privacy
             </span>

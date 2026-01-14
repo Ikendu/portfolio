@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
 
 export default function SubmitTestimonial() {
   const [formData, setFormData] = useState({
@@ -324,12 +324,12 @@ export default function SubmitTestimonial() {
           </form>
 
           <div className="mt-8 pt-8 border-t border-slate-700">
-            <Link
+            <ScrollLink
               to="/#testimonials"
               className="text-cyan-400 hover:text-cyan-300 transition"
             >
               ← Back to Testimonials
-            </Link>
+            </ScrollLink>
           </div>
         </div>
       </div>

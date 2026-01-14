@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ScrollToTop from "./ScrollTop";
 
 export default function Admin() {
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [testimonials, setTestimonials] = useState([]);
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState(null);
@@ -160,6 +162,7 @@ export default function Admin() {
   if (!authenticated) {
     return (
       <section className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 flex items-center justify-center py-20">
+        <ScrollToTop />
         <div className="max-w-md w-full mx-auto px-4">
           <div className="bg-slate-800 rounded-lg p-8 border border-slate-700">
             <h1 className="text-4xl font-bold text-white mb-2 text-center">
@@ -174,13 +177,22 @@ export default function Admin() {
                 <label className="block text-white font-semibold mb-2">
                   Password
                 </label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter admin password"
-                  className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter admin password"
+                    className="w-full bg-slate-700 text-white placeholder-gray-500 border border-slate-600 rounded-lg px-4 py-3 pr-12 focus:outline-none focus:border-cyan-400 transition"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-3 text-gray-400 hover:text-gray-300 transition"
+                  >
+                    {showPassword ? "👁️" : "👁️‍🗨️"}
+                  </button>
+                </div>
               </div>
 
               <button
@@ -225,12 +237,20 @@ export default function Admin() {
             <h1 className="text-4xl font-bold text-white mb-2">Admin Panel</h1>
             <p className="text-gray-400">Manage testimonials and feedback</p>
           </div>
-          <Link
-            to="/"
-            className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-lg transition"
-          >
-            Logout
-          </Link>
+          <div className="flex gap-4">
+            <Link
+              to="/admin/contacts"
+              className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition"
+            >
+              View Contacts
+            </Link>
+            <Link
+              to="/"
+              className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-lg transition"
+            >
+              Logout
+            </Link>
+          </div>
         </div>
 
         {/* Statistics */}

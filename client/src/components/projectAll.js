@@ -21,7 +21,7 @@ import proFile from "../assets/img/portfolio.jpg";
 export const teamWorks = [
   {
     title: `Nanocode Official website 🏢`,
-    desc: `Previous employer's company official website `,
+    desc: `The official company website for a previous employer.`,
     tools: "React, Vite, Tailwind CSS, Redux Toolkit, Socket.io, WebRTC etc",
     image: team,
     link: `https://www.nanocodes.com.ng/`,
@@ -73,7 +73,7 @@ export const freelanceWorks = [
   },
   {
     title: `Gift Hair 👩`,
-    desc: `An ecommerce website for selling of hair, attachment and wig`,
+    desc: `An e-commerce platform designed for the online sale of hair products, including attachments and wigs, with a focus on user experience and smooth checkout`,
     tools:
       "React, Vite, Tailwind CSS, Redux Toolkit, RESTful APIs, Nodejs, MongoDB, Bootstrap",
     image: freelance,
@@ -81,7 +81,7 @@ export const freelanceWorks = [
   },
   {
     title: `David Portfolio 💼`,
-    desc: `List and Description of all past and present design and implentation activities`,
+    desc: `A curated collection of projects showcasing my experience in designing, building, and maintaining real-world web applications.`,
     tools: "React, Vite, Tailwind CSS, PHP, MySQL, PHPMailer",
     image: proFile,
     link: `https://davidaniede.vercel.app/`,

@@ -9,9 +9,13 @@ import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import SubmitTestimonial from "./components/SubmitTestimonial";
 import Admin from "./components/Admin";
+import ContactsAdmin from "./components/ContactsAdmin";
+import { useScrollToSection } from "./hooks/useScrollToSection";
 
 // Home page component
 function Home() {
+  useScrollToSection();
+
   return (
     <>
       <Banner />
@@ -32,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/submit-testimonial" element={<SubmitTestimonial />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/contacts" element={<ContactsAdmin />} />
         </Route>
       </Routes>
     </BrowserRouter>
