@@ -1,5 +1,4 @@
 import { useState } from "react";
-import imageCompression from "browser-image-compression";
 
 export default function SubmitTestimonial() {
   const [formData, setFormData] = useState({
@@ -23,61 +22,117 @@ export default function SubmitTestimonial() {
     if (file) {
       // Check if file is already 30KB or less
       if (file.size <= 30 * 1024) {
-        // File is small enough, use it directly without compression
         setFormData({ ...formData, image: file });
         setStatus({ message: "", success: false });
         return;
       }
 
-      // File is larger than 30KB, compress it
       setCompressing(true);
       try {
-        // Compression options to achieve ~30KB
-        const options = {
-          maxSizeMB: 0.03, // 30KB
-          maxWidthOrHeight: 800,
-          useWebWorker: true,
-          quality: 0.6, // Adjust quality for better compression
+        const reader = new FileReader();
+        reader.onload = async (event) => {
+          try {
+            const img = new Image();
+            img.onload = async () => {
+              // Calculate new dimensions
+              let width = img.naturalWidth;
+              let height = img.naturalHeight;
+              const maxDimension = 600;
+
+              if (width > maxDimension || height > maxDimension) {
+                const ratio = Math.min(
+                  maxDimension / width,
+                  maxDimension / height
+                );
+                width = Math.round(width * ratio);
+                height = Math.round(height * ratio);
+              }
+
+              // Try compression with quality 0.5 first
+              const canvas = new OffscreenCanvas(width, height);
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+
+              let compressedBlob = await canvas.convertToBlob({
+                type: "image/jpeg",
+                quality: 0.5,
+              });
+
+              // If still too large, compress more aggressively
+              if (compressedBlob.size > 30 * 1024) {
+                compressedBlob = await canvas.convertToBlob({
+                  type: "image/jpeg",
+                  quality: 0.3,
+                });
+              }
+
+              // If still too large, reduce dimensions further
+              if (compressedBlob.size > 30 * 1024) {
+                const smallerWidth = Math.round(width * 0.7);
+                const smallerHeight = Math.round(height * 0.7);
+                const smallCanvas = new OffscreenCanvas(
+                  smallerWidth,
+                  smallerHeight
+                );
+                const smallCtx = smallCanvas.getContext("2d");
+                smallCtx.drawImage(img, 0, 0, smallerWidth, smallerHeight);
+
+                compressedBlob = await smallCanvas.convertToBlob({
+                  type: "image/jpeg",
+                  quality: 0.3,
+                });
+              }
+
+              const compressedFile = new File(
+                [compressedBlob],
+                file.name.replace(/\.[^/.]+$/, ".jpg"),
+                { type: "image/jpeg" }
+              );
+
+              setFormData({ ...formData, image: compressedFile });
+              setStatus({
+                message: `Image compressed to ${(
+                  compressedFile.size / 1024
+                ).toFixed(2)}KB ✓`,
+                success: true,
+              });
+              setCompressing(false);
+            };
+
+            img.onerror = () => {
+              setStatus({
+                message: "Failed to process image. Please try another image.",
+                success: false,
+              });
+              setCompressing(false);
+            };
+
+            img.src = event.target.result;
+          } catch (error) {
+            setStatus({
+              message: "Failed to compress image. Please try another image.",
+              success: false,
+            });
+            console.error(error);
+            setCompressing(false);
+          }
         };
 
-        const compressedFile = await imageCompression.compress(file, options);
+        reader.onerror = () => {
+          setStatus({
+            message: "Failed to read image file.",
+            success: false,
+          });
+          setCompressing(false);
+        };
 
-        // Verify compression worked
-        if (compressedFile.size > 30 * 1024) {
-          // If still over 30KB, compress more aggressively
-          const strictOptions = {
-            maxSizeMB: 0.025, // 25KB
-            maxWidthOrHeight: 600,
-            useWebWorker: true,
-            quality: 0.5,
-          };
-          const recompressedFile = await imageCompression.compress(
-            file,
-            strictOptions
-          );
-          setFormData({ ...formData, image: recompressedFile });
-          setStatus({
-            message: `Image compressed to ${(
-              recompressedFile.size / 1024
-            ).toFixed(2)}KB ✓`,
-            success: true,
-          });
-        } else {
-          setFormData({ ...formData, image: compressedFile });
-          setStatus({
-            message: `Image compressed to ${(
-              compressedFile.size / 1024
-            ).toFixed(2)}KB ✓`,
-            success: true,
-          });
-        }
+        reader.readAsDataURL(file);
       } catch (error) {
         setStatus({
           message: "Failed to compress image. Please try another image.",
           success: false,
         });
         console.error(error);
-      } finally {
         setCompressing(false);
       }
     }
@@ -137,6 +192,8 @@ export default function SubmitTestimonial() {
       setLoading(false);
     }
   };
+
+  console.log("Status:", status);
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 py-20 pt-32">
@@ -230,14 +287,14 @@ export default function SubmitTestimonial() {
                   ? "Compressing image..."
                   : "Max original size: 2MB. Max upload: 30KB"}
               </p>
-              {formData.image && status.message && (
+              {/* {formData.image && status.message && (
                 <p className="text-cyan-400 text-sm mt-2">✓ {status.message}</p>
               )}
               {formData.image && !status.message && (
                 <p className="text-cyan-400 text-sm mt-2">
                   ✓ Image selected ({(formData.image.size / 1024).toFixed(2)}KB)
                 </p>
-              )}
+              )} */}
             </div>
 
             <button
@@ -252,7 +309,7 @@ export default function SubmitTestimonial() {
                 : "Submit Testimonial"}
             </button>
 
-            {status.message && (
+            {/* {status.message && (
               <div
                 className={`p-4 rounded-lg ${
                   status.success
@@ -262,7 +319,7 @@ export default function SubmitTestimonial() {
               >
                 {status.message}
               </div>
-            )}
+            )} */}
           </form>
 
           <div className="mt-8 pt-8 border-t border-slate-700">
