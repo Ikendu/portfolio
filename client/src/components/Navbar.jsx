@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/icons/logoImage.png";
 import linkedin from "../assets/img/0linkedin.svg";
 import facebook from "../assets/img/0facebook.svg";
@@ -21,11 +22,11 @@ function NavbarComponent() {
   }, []);
 
   const navLinks = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: "Home", path: "/" },
+    { id: "about", label: "About", path: "/#about" },
+    { id: "skills", label: "Skills", path: "/#skills" },
+    { id: "projects", label: "Projects", path: "/#projects" },
+    { id: "contact", label: "Contact", path: "/#contact" },
   ];
 
   const socials = [
@@ -58,21 +59,21 @@ function NavbarComponent() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#home" className="hover:scale-105 transition-transform">
+          <Link to="/" className="hover:scale-105 transition-transform">
             <img
               src={passportIcon}
               alt="Logo"
               className="h-12 rounded-full border-2 border-cyan-400"
             />
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex gap-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.id}
-                  href={`#${link.id}`}
+                  to={link.path}
                   onClick={() => setActiveLink(link.id)}
                   className={`transition-colors font-medium ${
                     activeLink === link.id
@@ -81,7 +82,7 @@ function NavbarComponent() {
                   }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -127,9 +128,9 @@ function NavbarComponent() {
           <div className="md:hidden bg-slate-900 py-4 border-t border-slate-700">
             <div className="flex flex-col gap-3 mb-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.id}
-                  href={`#${link.id}`}
+                  to={link.path}
                   onClick={() => {
                     setActiveLink(link.id);
                     setMobileMenuOpen(false);
@@ -141,7 +142,7 @@ function NavbarComponent() {
                   }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
             <div className="flex gap-3 px-4 flex-wrap">

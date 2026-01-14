@@ -1,61 +1,40 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banner from "./components/Banner";
-import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
 import Skills from "./components/Skills";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import SubmitTestimonial from "./components/SubmitTestimonial";
 import Admin from "./components/Admin";
 
-function App() {
-  const [page, setPage] = useState("home");
-
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === "/submit-testimonial") {
-      setPage("submit-testimonial");
-    } else if (path === "/admin") {
-      setPage("admin");
-    } else {
-      setPage("home");
-    }
-  }, []);
-
-  if (page === "submit-testimonial") {
-    return (
-      <>
-        <Navbar />
-        <SubmitTestimonial />
-        <Footer />
-      </>
-    );
-  }
-
-  if (page === "admin") {
-    return (
-      <>
-        <Navbar />
-        <Admin />
-        <Footer />
-      </>
-    );
-  }
-
+// Home page component
+function Home() {
   return (
     <>
-      <Navbar />
       <Banner />
       <About />
       <Skills />
       <Project />
       <Testimonials />
       <Contact />
-      <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/submit-testimonial" element={<SubmitTestimonial />} />
+          <Route path="/admin" element={<Admin />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

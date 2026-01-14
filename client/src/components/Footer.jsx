@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/icons/logoImage.png";
 import linkedin from "../assets/img/0linkedin.svg";
 import facebook from "../assets/img/0facebook.svg";
@@ -77,48 +78,45 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="border-t border-slate-800 py-8 mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Home
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              to="/#about"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               About
-            </a>
-            <a
-              href="#skills"
+            </Link>
+            <Link
+              to="/#skills"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Skills
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              to="/#projects"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Projects
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/#contact"
               className="text-gray-400 hover:text-cyan-400 transition"
             >
               Contact
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-cyan-400 transition"
-            >
+            </Link>
+            <span className="text-gray-400 hover:text-cyan-400 transition cursor-pointer">
               Privacy
-            </a>
-            <a
-              href="/admin"
+            </span>
+            <Link
+              to="/admin"
               className="text-gray-300 hover:text-cyan-400 transition text-sm font-medium"
             >
               Admin
-            </a>
+            </Link>
           </div>
         </div>
 

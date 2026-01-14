@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Admin() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -203,12 +204,12 @@ export default function Admin() {
             </form>
 
             <div className="mt-8 pt-8 border-t border-slate-700">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-cyan-400 hover:text-cyan-300 transition"
               >
                 ← Back to Portfolio
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -224,12 +225,12 @@ export default function Admin() {
             <h1 className="text-4xl font-bold text-white mb-2">Admin Panel</h1>
             <p className="text-gray-400">Manage testimonials and feedback</p>
           </div>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-lg transition"
           >
             Logout
-          </a>
+          </Link>
         </div>
 
         {/* Statistics */}

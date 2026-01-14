@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SubmitTestimonial() {
   const [formData, setFormData] = useState({
@@ -323,12 +324,12 @@ export default function SubmitTestimonial() {
           </form>
 
           <div className="mt-8 pt-8 border-t border-slate-700">
-            <a
-              href="/#testimonials"
+            <Link
+              to="/#testimonials"
               className="text-cyan-400 hover:text-cyan-300 transition"
             >
               ← Back to Testimonials
-            </a>
+            </Link>
           </div>
         </div>
       </div>
