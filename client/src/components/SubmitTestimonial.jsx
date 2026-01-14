@@ -1,4 +1,5 @@
 import { useState } from "react";
+import imageCompression from "browser-image-compression";
 
 export default function SubmitTestimonial() {
   const [formData, setFormData] = useState({
@@ -10,16 +11,66 @@ export default function SubmitTestimonial() {
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ message: "", success: false });
+  const [compressing, setCompressing] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleImageChange = (e) => {
+  const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData({ ...formData, image: file });
+      setCompressing(true);
+      try {
+        // Compression options to achieve ~30KB
+        const options = {
+          maxSizeMB: 0.03, // 30KB
+          maxWidthOrHeight: 800,
+          useWebWorker: true,
+          quality: 0.6, // Adjust quality for better compression
+        };
+
+        const compressedFile = await imageCompression.compress(file, options);
+
+        // Verify compression worked
+        if (compressedFile.size > 30 * 1024) {
+          // If still over 30KB, compress more aggressively
+          const strictOptions = {
+            maxSizeMB: 0.025, // 25KB
+            maxWidthOrHeight: 600,
+            useWebWorker: true,
+            quality: 0.5,
+          };
+          const recompressedFile = await imageCompression.compress(
+            file,
+            strictOptions
+          );
+          setFormData({ ...formData, image: recompressedFile });
+          setStatus({
+            message: `Image compressed to ${(
+              recompressedFile.size / 1024
+            ).toFixed(2)}KB ✓`,
+            success: true,
+          });
+        } else {
+          setFormData({ ...formData, image: compressedFile });
+          setStatus({
+            message: `Image compressed to ${(
+              compressedFile.size / 1024
+            ).toFixed(2)}KB ✓`,
+            success: true,
+          });
+        }
+      } catch (error) {
+        setStatus({
+          message: "Failed to compress image. Please try another image.",
+          success: false,
+        });
+        console.error(error);
+      } finally {
+        setCompressing(false);
+      }
     }
   };
 
@@ -162,19 +213,32 @@ export default function SubmitTestimonial() {
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
-                className="w-full bg-slate-700 text-gray-300 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition"
+                disabled={compressing}
+                className="w-full bg-slate-700 text-gray-300 border border-slate-600 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 transition disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <p className="text-gray-400 text-sm mt-2">
-                Max size: 2MB. Formats: JPG, PNG, GIF
+                {compressing
+                  ? "Compressing image..."
+                  : "Max original size: 2MB. Will be compressed to ~30KB"}
               </p>
+              {formData.image && (
+                <p className="text-cyan-400 text-sm mt-2">
+                  ✓ Image selected and compressed (
+                  {(formData.image.size / 1024).toFixed(2)}KB)
+                </p>
+              )}
             </div>
 
             <button
               type="submit"
-              disabled={loading}
-              className="w-full bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all duration-300"
+              disabled={loading || compressing}
+              className="w-full bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all duration-300 disabled:cursor-not-allowed"
             >
-              {loading ? "Submitting..." : "Submit Testimonial"}
+              {compressing
+                ? "Compressing Image..."
+                : loading
+                ? "Submitting..."
+                : "Submit Testimonial"}
             </button>
 
             {status.message && (

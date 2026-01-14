@@ -57,6 +57,7 @@ export default function Testimonials() {
     }
   };
 
+  console.log("Testimonials", testimonials);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },

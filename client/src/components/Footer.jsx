@@ -113,6 +113,12 @@ export default function Footer() {
             >
               Privacy
             </a>
+            <a
+              href="/admin"
+              className="text-gray-300 hover:text-cyan-400 transition text-sm font-medium"
+            >
+              Admin
+            </a>
           </div>
         </div>
 

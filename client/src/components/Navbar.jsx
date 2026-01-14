@@ -87,7 +87,7 @@ function NavbarComponent() {
           </div>
 
           {/* Desktop Social Icons */}
-          <div className="hidden md:flex gap-4">
+          <div className="hidden md:flex gap-4 items-center">
             {socials.map((social) => (
               <a
                 key={social.label}

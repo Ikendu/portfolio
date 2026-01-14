@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import SubmitTestimonial from "./components/SubmitTestimonial";
+import Admin from "./components/Admin";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -17,6 +18,8 @@ function App() {
     const path = window.location.pathname;
     if (path === "/submit-testimonial") {
       setPage("submit-testimonial");
+    } else if (path === "/admin") {
+      setPage("admin");
     } else {
       setPage("home");
     }
@@ -27,6 +30,16 @@ function App() {
       <>
         <Navbar />
         <SubmitTestimonial />
+        <Footer />
+      </>
+    );
+  }
+
+  if (page === "admin") {
+    return (
+      <>
+        <Navbar />
+        <Admin />
         <Footer />
       </>
     );
