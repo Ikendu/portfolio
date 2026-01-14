@@ -60,9 +60,15 @@ export default function Admin() {
         const data = await response.json();
         if (data.success) {
           setTestimonials(testimonials.filter((t) => t.id !== id));
-          setStatus({ message: "Testimonial deleted successfully!", success: true });
+          setStatus({
+            message: "Testimonial deleted successfully!",
+            success: true,
+          });
         } else {
-          setStatus({ message: data.message || "Failed to delete", success: false });
+          setStatus({
+            message: data.message || "Failed to delete",
+            success: false,
+          });
         }
       } catch (error) {
         setStatus({ message: "Error deleting testimonial", success: false });
@@ -100,9 +106,15 @@ export default function Admin() {
           testimonials.map((t) => (t.id === editingId ? editData : t))
         );
         setEditingId(null);
-        setStatus({ message: "Testimonial updated successfully!", success: true });
+        setStatus({
+          message: "Testimonial updated successfully!",
+          success: true,
+        });
       } else {
-        setStatus({ message: data.message || "Failed to update", success: false });
+        setStatus({
+          message: data.message || "Failed to update",
+          success: false,
+        });
       }
     } catch (error) {
       setStatus({ message: "Error updating testimonial", success: false });
@@ -140,8 +152,7 @@ export default function Admin() {
       t.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       t.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
       t.feedback.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter =
-      filterStatus === "all" || t.status === filterStatus;
+    const matchesFilter = filterStatus === "all" || t.status === filterStatus;
     return matchesSearch && matchesFilter;
   });
 
@@ -289,9 +300,7 @@ export default function Admin() {
         {loading ? (
           <div className="text-center text-gray-400">Loading...</div>
         ) : filteredTestimonials.length === 0 ? (
-          <div className="text-center text-gray-400">
-            No testimonials found
-          </div>
+          <div className="text-center text-gray-400">No testimonials found</div>
         ) : (
           <div className="space-y-4">
             {filteredTestimonials.map((testimonial) => (

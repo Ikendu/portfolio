@@ -13,41 +13,50 @@ Navigate to: `https://portfolio.morelinks.com.ng/admin` or click the **Admin** l
 ## Features
 
 ### 1. **View All Testimonials**
+
 - Displays all testimonials in a list format
 - Shows testimonial details (name, role, company, feedback)
 - Displays status of each testimonial
 
 ### 2. **Search Testimonials**
+
 Search by:
+
 - Testimonial author name
 - Company name
 - Feedback content
 
 ### 3. **Filter by Status**
+
 - **All** - Show all testimonials
 - **Pending** - Testimonials awaiting approval
 - **Approved** - Published testimonials (visible on main page)
 - **Rejected** - Declined testimonials
 
 ### 4. **Edit Testimonials**
+
 1. Click **Edit** button on any testimonial
 2. Modify: Name, Role, Company, or Feedback
 3. Click **Save** to update
 4. Click **Cancel** to discard changes
 
 ### 5. **Change Status**
+
 - Click the status dropdown on any testimonial
 - Select: Pending, Approved, or Rejected
 - Changes apply immediately
 - **Only "Approved" testimonials appear on the main portfolio**
 
 ### 6. **Delete Testimonials**
+
 1. Click **Delete** button
 2. Confirm deletion when prompted
 3. Testimonial and associated image are removed
 
 ### 7. **Statistics Dashboard**
+
 View quick stats:
+
 - Total Testimonials
 - Approved Count
 - Pending Review Count
@@ -58,11 +67,13 @@ View quick stats:
 The admin panel uses these backend endpoints:
 
 ### GET Testimonials
+
 ```
 GET https://portfolio.morelinks.com.ng/api/testimonials.php?limit=100
 ```
 
 ### Update Testimonial
+
 ```
 POST https://portfolio.morelinks.com.ng/api/update-testimonial.php
 
@@ -77,6 +88,7 @@ Body:
 ```
 
 ### Update Status
+
 ```
 POST https://portfolio.morelinks.com.ng/api/update-status.php
 
@@ -88,6 +100,7 @@ Body:
 ```
 
 ### Delete Testimonial
+
 ```
 POST https://portfolio.morelinks.com.ng/api/delete-testimonial.php
 

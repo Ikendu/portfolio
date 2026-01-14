@@ -21,6 +21,15 @@ export default function SubmitTestimonial() {
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
+      // Check if file is already 30KB or less
+      if (file.size <= 30 * 1024) {
+        // File is small enough, use it directly without compression
+        setFormData({ ...formData, image: file });
+        setStatus({ message: "", success: false });
+        return;
+      }
+
+      // File is larger than 30KB, compress it
       setCompressing(true);
       try {
         // Compression options to achieve ~30KB
@@ -219,12 +228,14 @@ export default function SubmitTestimonial() {
               <p className="text-gray-400 text-sm mt-2">
                 {compressing
                   ? "Compressing image..."
-                  : "Max original size: 2MB. Will be compressed to ~30KB"}
+                  : "Max original size: 2MB. Max upload: 30KB"}
               </p>
-              {formData.image && (
+              {formData.image && status.message && (
+                <p className="text-cyan-400 text-sm mt-2">✓ {status.message}</p>
+              )}
+              {formData.image && !status.message && (
                 <p className="text-cyan-400 text-sm mt-2">
-                  ✓ Image selected and compressed (
-                  {(formData.image.size / 1024).toFixed(2)}KB)
+                  ✓ Image selected ({(formData.image.size / 1024).toFixed(2)}KB)
                 </p>
               )}
             </div>
