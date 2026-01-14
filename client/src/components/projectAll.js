@@ -90,6 +90,24 @@ export const freelanceWorks = [
 
 export const personalWorks = [
   {
+    title: `Video Call`,
+    desc: `Video call with credit deduction capabilities`,
+    image: testProject3,
+    link: `https://peerjs-call.vercel.app/`,
+  },
+  {
+    title: `Optimization`,
+    desc: `Test on optimization and mobile responsiveness`,
+    image: testProject,
+    link: `https://show-us-work.vercel.app/`,
+  },
+  {
+    title: `Recreate and optimize`,
+    desc: `Test on recreation of original page with mobile responsiveness`,
+    image: testProject1,
+    link: `https://tegamedia.vercel.app/`,
+  },
+  {
     title: `Basic Calculator 🧮`,
     desc: `For mathematical operations`,
     tools: "React, Vite, Tailwind CSS",
@@ -105,23 +123,4 @@ export const personalWorks = [
   },
 ];
 
-export const testWorks = [
-  {
-    title: `Optimization`,
-    desc: `Test on optimization and mobile responsiveness`,
-    image: testProject,
-    link: `https://show-us-work.vercel.app/`,
-  },
-  {
-    title: `Recreate and optimize`,
-    desc: `Test on recreation of original page with mobile responsiveness`,
-    image: testProject1,
-    link: `https://tegamedia.vercel.app/`,
-  },
-  {
-    title: `Video Call`,
-    desc: `Video call with credit deduction capabilities`,
-    image: testProject3,
-    link: `https://peerjs-call.vercel.app/`,
-  },
-];
+export const testWorks = [];
