@@ -68,7 +68,7 @@ function NavbarComponent() {
             <img
               src={passportIcon}
               alt="Logo"
-              className="h-12 rounded-full border-2 border-cyan-400"
+              className="max-h-12 max-w-12 rounded-full border-2 border-cyan-400"
             />
           </Link>
 
