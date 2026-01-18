@@ -92,7 +92,7 @@ export const freelanceWorks = [
 export const personalWorks = [
   {
     title: `Dashboard UI Design`,
-    desc: `A user dashboard done for learning purpose`,
+    desc: `A user dashboard preview project done for practice purpose`,
     image: dashboard,
     link: `https://serene-fox-5a6ea0.netlify.app/`,
   },
