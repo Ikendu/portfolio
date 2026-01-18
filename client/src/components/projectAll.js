@@ -15,6 +15,7 @@ import testProject3 from "../assets/img/testProject3.jpg";
 import prime from "../assets/img/prime.jpg";
 import lodge from "../assets/img/lodge.jpg";
 import proFile from "../assets/img/portfolio.jpg";
+import dashboard from "../assets/img/dashboard.jpg";
 
 // import image3 from "../assets/img/project-img3.png";
 
@@ -90,10 +91,10 @@ export const freelanceWorks = [
 
 export const personalWorks = [
   {
-    title: `Video Call`,
-    desc: `Video call with credit deduction capabilities`,
-    image: testProject3,
-    link: `https://peerjs-call.vercel.app/`,
+    title: `Dashboard UI Design`,
+    desc: `A user dashboard done for learning purpose`,
+    image: dashboard,
+    link: `https://serene-fox-5a6ea0.netlify.app/`,
   },
   {
     title: `Optimization`,
@@ -113,6 +114,12 @@ export const personalWorks = [
     tools: "React, Vite, Tailwind CSS",
     image: procalc,
     link: `https://calculatedavid.vercel.app/`,
+  },
+  {
+    title: `Video Call`,
+    desc: `Video call with credit deduction capabilities`,
+    image: testProject3,
+    link: `https://peerjs-call.vercel.app/`,
   },
   {
     title: `Movie List 🎬🎦`,
