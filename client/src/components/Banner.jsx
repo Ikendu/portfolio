@@ -60,11 +60,13 @@ export default function Banner() {
                 David Aniede <br />
               </h1>
               <div className=" md:hidden flex justify-center">
-                <img
-                  src={passport}
-                  alt="Profile Picture"
-                  className="rounded-full max-h-56 max-w-56 object-fi"
-                />
+                <div className="group">
+                  <img
+                    src={passport}
+                    alt="Profile Picture"
+                    className="rounded-full max-h-56 max-w-56 object-fi blur-sm opacity-50 group-hover:blur-none group-hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
               </div>
 
               <h4 className="text-center md:text-start">
@@ -140,11 +142,13 @@ export default function Banner() {
           </div>
 
           <div className="hidden md:flex justify-center">
-            <img
-              src={passport}
-              alt="Banner"
-              className="max-w-md w-full object-cover rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300"
-            />
+            <div className="group">
+              <img
+                src={passport}
+                alt="Banner"
+                className="max-w-md w-full object-cover rounded-lg shadow-2xl hover:scale-105 blur-sm opacity-70 group-hover:blur-none group-hover:opacity-100 transition-all duration-300"
+              />
+            </div>
           </div>
         </div>
       </div>
