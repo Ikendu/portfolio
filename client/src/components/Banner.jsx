@@ -60,12 +60,13 @@ export default function Banner() {
                 David Aniede <br />
               </h1>
               <div className=" md:hidden flex justify-center">
-                <div className="group">
+                <div className="group relative">
                   <img
                     src={passport}
                     alt="Profile Picture"
-                    className="rounded-full max-h-56 max-w-56 object-fi blur-sm opacity-50 group-hover:blur-none group-hover:opacity-100 transition-all duration-300"
+                    className="rounded-full max-h-56 max-w-56 object-fi"
                   />
+                  <div className="absolute inset-0 bg-blue-900 opacity-50 group-hover:opacity-0 transition-opacity duration-300 rounded-full"></div>
                 </div>
               </div>
 
@@ -142,12 +143,13 @@ export default function Banner() {
           </div>
 
           <div className="hidden md:flex justify-center">
-            <div className="group">
+            <div className="group relative">
               <img
                 src={passport}
                 alt="Banner"
-                className="max-w-md w-full object-cover rounded-lg shadow-2xl hover:scale-105 blur-sm opacity-70 group-hover:blur-none group-hover:opacity-100 transition-all duration-300"
+                className="max-w-md w-full object-cover rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300"
               />
+              <div className="absolute inset-0 bg-blue-900 opacity-50 group-hover:opacity-0 transition-opacity duration-300 rounded-lg"></div>
             </div>
           </div>
         </div>
